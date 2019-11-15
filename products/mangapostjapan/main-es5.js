@@ -31,6 +31,17 @@
             /* harmony default export */ __webpack_exports__["default"] = ("<h1>\n  {{title}}\n</h1>\n<app-product-list></app-product-list>\n");
             /***/ 
         }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/product-detail/product-detail.component.html": 
+        /*!****************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/product-detail/product-detail.component.html ***!
+          \****************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"product\">\n  <h2>{{product.name}}の情報</h2>\n\n  <div>\n    <span>番号: </span>{{product.id}}\n  </div>\n\n  <div>\n    <label>名前:\n      <input [(ngModel)]=\"product.name\" placeholder=\"名前\">\n    </label>\n  </div>\n</div>\n");
+            /***/ 
+        }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/product-list/product-list.component.html": 
         /*!************************************************************************************************!*\
           !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/product-list/product-list.component.html ***!
@@ -39,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>\n  welcome to my app\n</p>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>\n  welcome to my app\n</p>\n\n<!--\n  {{author}}\n-->\n\n<!--\n<h2>{{author.name}}の情報</h2>\n-->\n<!--\n<h2>{{products[0].name}}の情報</h2>\n-->\n\n<!--\n<div *ngIf=\"selectedProduct\">\n  <h2>{{selectedProduct.name}}の情報</h2>\n\n  <div>\n    <span>番号: </span>{{selectedProduct.id}}\n  </div>\n\n  <div>\n    <label>名前:\n      <input [(ngModel)]=\"selectedProduct.name\" placeholder=\"名前\">\n    </label>\n  </div>\n</div>\n-->\n\n<ul class=\"products\">\n  <li *ngFor=\"let product of products\" [class.selected]=\"product === selectedProduct\" (click)=\"onSelect(product)\">\n    <span class=\"badge\">{{product.id}}</span> {{product.name}}\n  </li>\n</ul>\n\n<app-product-detail [product]=\"selectedProduct\"></app-product-detail>\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -342,6 +353,30 @@
             }
             /***/ 
         }),
+        /***/ "./src/app/Products.ts": 
+        /*!*****************************!*\
+          !*** ./src/app/Products.ts ***!
+          \*****************************/
+        /*! exports provided: PRODUCTS */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRODUCTS", function () { return PRODUCTS; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var PRODUCTS = [
+                { id: 11, name: 'ロロッロ' },
+                { id: 12, name: '私の少年' },
+                { id: 13, name: 'ソウナンですか？' },
+                { id: 14, name: '僕の心のヤバイやつ' },
+                { id: 15, name: 'ヒナまつり' },
+                { id: 16, name: 'かぐや様は告らせたい' },
+                { id: 17, name: '異世界おじさん' },
+                { id: 18, name: 'ハコヅメ' },
+                { id: 19, name: '逃げるは恥だが役に立つ' },
+                { id: 20, name: 'チェンソーマン' }
+            ];
+            /***/ 
+        }),
         /***/ "./src/app/app-routing.module.ts": 
         /*!***************************************!*\
           !*** ./src/app/app-routing.module.ts ***!
@@ -417,9 +452,11 @@
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-            /* harmony import */ var _product_list_product_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./product-list/product-list.component */ "./src/app/product-list/product-list.component.ts");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _product_list_product_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product-list/product-list.component */ "./src/app/product-list/product-list.component.ts");
+            /* harmony import */ var _product_detail_product_detail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./product-detail/product-detail.component */ "./src/app/product-detail/product-detail.component.ts");
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
@@ -428,17 +465,60 @@
             AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
                     declarations: [
-                        _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                        _product_list_product_list_component__WEBPACK_IMPORTED_MODULE_5__["ProductListComponent"]
+                        _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                        _product_list_product_list_component__WEBPACK_IMPORTED_MODULE_6__["ProductListComponent"],
+                        _product_detail_product_detail_component__WEBPACK_IMPORTED_MODULE_7__["ProductDetailComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                        _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+                        _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
                     ],
                     providers: [],
-                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
                 })
             ], AppModule);
+            /***/ 
+        }),
+        /***/ "./src/app/product-detail/product-detail.component.css": 
+        /*!*************************************************************!*\
+          !*** ./src/app/product-detail/product-detail.component.css ***!
+          \*************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QtZGV0YWlsL3Byb2R1Y3QtZGV0YWlsLmNvbXBvbmVudC5jc3MifQ== */");
+            /***/ 
+        }),
+        /***/ "./src/app/product-detail/product-detail.component.ts": 
+        /*!************************************************************!*\
+          !*** ./src/app/product-detail/product-detail.component.ts ***!
+          \************************************************************/
+        /*! exports provided: ProductDetailComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductDetailComponent", function () { return ProductDetailComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var ProductDetailComponent = /** @class */ (function () {
+                function ProductDetailComponent() {
+                }
+                ProductDetailComponent.prototype.ngOnInit = function () {
+                };
+                return ProductDetailComponent;
+            }());
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+            ], ProductDetailComponent.prototype, "product", void 0);
+            ProductDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-product-detail',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./product-detail.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/product-detail/product-detail.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./product-detail.component.css */ "./src/app/product-detail/product-detail.component.css")).default]
+                })
+            ], ProductDetailComponent);
             /***/ 
         }),
         /***/ "./src/app/product-list/product-list.component.css": 
@@ -449,7 +529,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QtbGlzdC9wcm9kdWN0LWxpc3QuY29tcG9uZW50LmNzcyJ9 */");
+            /* harmony default export */ __webpack_exports__["default"] = (".selected {\n\tbackground-color: #CFD8DC !important;\n\tcolor: white;\n}\n.products {\n\tmargin: 0 0 2em 0;\n\tlist-style-type: none;\n\tpadding: 0;\n\twidth: 15em;\n}\n.products li {\n\tcursor: pointer;\n\tposition: relative;\n\tleft: 0;\n\tbackground-color: #EEE;\n\tmargin: .5em;\n\tpadding: .3em 0;\n\theight: 1.6em;\n\tborder-radius: 4px;\n}\n.products li.selected:hover {\n\tbackground-color: #BBD8DC !important;\n\tcolor: white;\n}\n.products li:hover {\n\tcolor: #607D8B;\n\tbackground-color: #DDD;\n\tleft: .1em;\n}\n.products .text {\n\tposition: relative;\n\ttop: -3px;\n}\n.products .badge {\n\tdisplay: inline-block;\n\tfont-size: small;\n\tcolor: white;\n\tpadding: 0.8em 0.7em 0 0.7em;\n\tbackground-color: #607D8B;\n\tline-height: 1em;\n\tposition: relative;\n\tleft: -1px;\n\ttop: -4px;\n\theight: 1.8em;\n\tmargin-right: .8em;\n\tborder-radius: 4px 0 0 4px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdC1saXN0L3Byb2R1Y3QtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msb0NBQW9DO0NBQ3BDLFlBQVk7QUFDYjtBQUNBO0NBQ0MsaUJBQWlCO0NBQ2pCLHFCQUFxQjtDQUNyQixVQUFVO0NBQ1YsV0FBVztBQUNaO0FBQ0E7Q0FDQyxlQUFlO0NBQ2Ysa0JBQWtCO0NBQ2xCLE9BQU87Q0FDUCxzQkFBc0I7Q0FDdEIsWUFBWTtDQUNaLGVBQWU7Q0FDZixhQUFhO0NBQ2Isa0JBQWtCO0FBQ25CO0FBQ0E7Q0FDQyxvQ0FBb0M7Q0FDcEMsWUFBWTtBQUNiO0FBQ0E7Q0FDQyxjQUFjO0NBQ2Qsc0JBQXNCO0NBQ3RCLFVBQVU7QUFDWDtBQUNBO0NBQ0Msa0JBQWtCO0NBQ2xCLFNBQVM7QUFDVjtBQUNBO0NBQ0MscUJBQXFCO0NBQ3JCLGdCQUFnQjtDQUNoQixZQUFZO0NBQ1osNEJBQTRCO0NBQzVCLHlCQUF5QjtDQUN6QixnQkFBZ0I7Q0FDaEIsa0JBQWtCO0NBQ2xCLFVBQVU7Q0FDVixTQUFTO0NBQ1QsYUFBYTtDQUNiLGtCQUFrQjtDQUNsQiwwQkFBMEI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9wcm9kdWN0LWxpc3QvcHJvZHVjdC1saXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2VsZWN0ZWQge1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjQ0ZEOERDICFpbXBvcnRhbnQ7XG5cdGNvbG9yOiB3aGl0ZTtcbn1cbi5wcm9kdWN0cyB7XG5cdG1hcmdpbjogMCAwIDJlbSAwO1xuXHRsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG5cdHBhZGRpbmc6IDA7XG5cdHdpZHRoOiAxNWVtO1xufVxuLnByb2R1Y3RzIGxpIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdGxlZnQ6IDA7XG5cdGJhY2tncm91bmQtY29sb3I6ICNFRUU7XG5cdG1hcmdpbjogLjVlbTtcblx0cGFkZGluZzogLjNlbSAwO1xuXHRoZWlnaHQ6IDEuNmVtO1xuXHRib3JkZXItcmFkaXVzOiA0cHg7XG59XG4ucHJvZHVjdHMgbGkuc2VsZWN0ZWQ6aG92ZXIge1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjQkJEOERDICFpbXBvcnRhbnQ7XG5cdGNvbG9yOiB3aGl0ZTtcbn1cbi5wcm9kdWN0cyBsaTpob3ZlciB7XG5cdGNvbG9yOiAjNjA3RDhCO1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjREREO1xuXHRsZWZ0OiAuMWVtO1xufVxuLnByb2R1Y3RzIC50ZXh0IHtcblx0cG9zaXRpb246IHJlbGF0aXZlO1xuXHR0b3A6IC0zcHg7XG59XG4ucHJvZHVjdHMgLmJhZGdlIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRmb250LXNpemU6IHNtYWxsO1xuXHRjb2xvcjogd2hpdGU7XG5cdHBhZGRpbmc6IDAuOGVtIDAuN2VtIDAgMC43ZW07XG5cdGJhY2tncm91bmQtY29sb3I6ICM2MDdEOEI7XG5cdGxpbmUtaGVpZ2h0OiAxZW07XG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcblx0bGVmdDogLTFweDtcblx0dG9wOiAtNHB4O1xuXHRoZWlnaHQ6IDEuOGVtO1xuXHRtYXJnaW4tcmlnaHQ6IC44ZW07XG5cdGJvcmRlci1yYWRpdXM6IDRweCAwIDAgNHB4O1xufVxuIl19 */");
             /***/ 
         }),
         /***/ "./src/app/product-list/product-list.component.ts": 
@@ -463,10 +543,22 @@
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductListComponent", function () { return ProductListComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _Products__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Products */ "./src/app/Products.ts");
+            //import { Author } from '../Author';
             var ProductListComponent = /** @class */ (function () {
                 function ProductListComponent() {
+                    //  author = '岩明均';
+                    //  author: Author = {
+                    //    id: 1,
+                    //    name: '三部けい'
+                    //  };
+                    this.products = _Products__WEBPACK_IMPORTED_MODULE_2__["PRODUCTS"];
                 }
                 ProductListComponent.prototype.ngOnInit = function () {
+                };
+                ProductListComponent.prototype.onSelect = function (product) {
+                    console.log(product);
+                    this.selectedProduct = product;
                 };
                 return ProductListComponent;
             }());
