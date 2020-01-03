@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"position: relative;\">\n  <!-- Canvas -->\n  <canvas #board style=\"position: absolute; top: 0; left: 0; z-index: 0;\"></canvas>\n  <canvas #dots style=\"position: absolute; top: 0; left: 0; z-index: 1;\"></canvas>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Canvas -->\n<div style=\"position: relative;\">\n  <!-- Canvas: Board -->\n  <canvas #board\n          style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n\n  <!-- Canvas: Dots -->\n  <canvas #dots\n          style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n</div>\n");
 
 /***/ }),
 
@@ -847,19 +847,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BoardComponent", function() { return BoardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _util_log__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/log */ "./src/app/util/log.ts");
-/* harmony import */ var _board_point__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./board-point */ "./src/app/board/board-point.ts");
-/* harmony import */ var _puzzles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./puzzles */ "./src/app/board/puzzles.ts");
+/* harmony import */ var _board_point__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./board-point */ "./src/app/board/board-point.ts");
+/* harmony import */ var _puzzles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./puzzles */ "./src/app/board/puzzles.ts");
+/* harmony import */ var _util_log__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/log */ "./src/app/util/log.ts");
 
 
 
 
 
 let BoardComponent = class BoardComponent {
+    /**
+     * .
+     */
     constructor() {
         this.TAG = 'BoardComponent';
         this.BOARD_ROWS = 7;
         this.BOARD_COLUMNS = 7;
+        this.canvasWidth = 2880;
+        this.canvasHeight = 2880;
         this.COLORS = [
             {
                 fillStyleBackgroundColor: '#f4511e',
@@ -884,132 +889,127 @@ let BoardComponent = class BoardComponent {
         this.fillStyleBackgroundColor = this.COLORS[this.color].fillStyleBackgroundColor;
         this.fillStyleClear = this.fillStyleBackgroundColor;
         this.strokeStyleClear = this.fillStyleBackgroundColor;
-        // private readonly fillStyleText = '#ffccbc';
+        this.fontFamilyText = 'sans-serif';
         this.fillStyleText = this.COLORS[this.color].fillStyleText;
         this.endAngleDot = (Math.PI * 2);
         this.fillStyleDot = this.COLORS[this.color].fillStyleDot;
         this.lineCap = 'round';
         this.strokeStyleLine = this.COLORS[this.color].strokeStyleLine;
-        this.fontFamilyCross = 'sans-serif';
+        this.fontFamilyCross = this.fontFamilyText;
         this.fillStyleCross = this.strokeStyleLine;
         this.points = new Array();
         this.stage = 0;
-        this.puzzle = _puzzles__WEBPACK_IMPORTED_MODULE_4__["Puzzles"].get(this.stage);
+        this.puzzle = _puzzles__WEBPACK_IMPORTED_MODULE_3__["Puzzles"].get(this.stage);
     }
+    /**
+     * .
+     */
     ngOnInit() {
-        for (let i = 0; i < this.BOARD_ROWS; i++) {
-            this.points[i] = new Array();
-            for (let j = 0; j < this.BOARD_COLUMNS; j++) {
-                this.points[i][j] = new _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"]();
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: start');
+        // .
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
+        const min = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: min: ' + min);
+        // .
+        this.canvasWidth = (min * 2);
+        this.canvasHeight = (min * 2);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasWidth: ' + this.canvasWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasHeight: ' + this.canvasHeight);
+        // .
+        this.canvasStyleWidth = (min + 'px');
+        this.canvasStyleHeight = (min + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleWidth: ' + this.canvasStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleHeight: ' + this.canvasStyleHeight);
+        // .
+        this.clickAdjustX = (this.canvasWidth / Number(this.canvasStyleWidth.replace('px', '')));
+        this.clickAdjustY = (this.canvasHeight / Number(this.canvasStyleHeight.replace('px', '')));
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustX: ' + this.clickAdjustX);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustY: ' + this.clickAdjustY);
+        // .
+        for (let row = 0; row < this.BOARD_ROWS; row++) {
+            this.points[row] = new Array();
+            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
+                this.points[row][column] = new _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"]();
             }
         }
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: end');
     }
     /**
      * .
      */
     ngAfterViewInit() {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start');
         // .
         this.getCanvases();
         // .
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: window.innerWidth: ' + window.innerWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: window.innerHeight: ' + window.innerHeight);
-        let side = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
+        const side = (this.canvasWidth > this.canvasHeight) ? this.canvasHeight : this.canvasWidth;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: side: ' + side);
         // 48dp.
         this.square = Math.floor((side * 2) / ((this.BOARD_COLUMNS * 2) + 1));
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: square: ' + this.square);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: square: ' + this.square);
         // 12dp = 48dp / 4.
         this.margin = Math.floor((this.square / 2) / 2);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: margin: ' + this.margin);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: margin: ' + this.margin);
         // 4dp = 48dp / 12.
-        this.lineWidth = (this.square / 12);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: lineWidth: ' + this.lineWidth);
+        this.lineWidth = Math.floor(this.square / 12);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: lineWidth: ' + this.lineWidth);
         // 4dp.
-        this.lineRadius = this.lineWidth;
         this.radiusDot = this.lineWidth;
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: lineRadius: ' + this.lineRadius);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: radiusDot: ' + this.radiusDot);
         // 12dp = 48dp / 4.
-        this.clickRange = (this.square / 4);
+        // this.clickRange = Math.floor(this.square / 4);
+        this.clickRange = this.margin;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: clickRange: ' + this.clickRange);
         // 20dp = 48dp / 12 * 5.
-        this.fontSizeCross = ((this.square / 12) * 5);
+        this.fontSizeCross = Math.floor((this.square / 12) * 5);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCross: ' + this.fontSizeCross);
         // 24dp = 20dp / 5 * 6.
-        this.fontSizeCrossClear = ((this.fontSizeCross / 5) * 6);
+        this.fontSizeCrossClear = Math.floor((this.fontSizeCross / 5) * 6);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCrossClear: ' + this.fontSizeCrossClear);
         // 360dp = (48dp x 7) + (12dp x 2).
-        side = ((this.square * this.BOARD_COLUMNS) + (this.margin * 2));
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: side: ' + side);
+        // side = ((this.square * this.BOARD_COLUMNS) + (this.margin * 2));
+        // Log.d(this.TAG, 'ngAfterViewInit: side: ' + side);
         // .
-        this.setCanvasesSize(side, side);
+        this.setCanvasBackgroundColor(this.canvasWidth, this.canvasHeight);
         // .
         this.drawDots();
         // .
-        // for (let i = 0; i < (this.BOARD_COLUMNS + 1); i++) {
-        //   const x = (i * this.square);
-        //   this.context.beginPath();
-        //   this.context.lineWidth = 2;
-        //   this.context.moveTo(x + this.margin, 0 + this.margin);
-        //   this.context.lineTo(x + this.margin, this.canvas.height - this.margin);
-        //   this.context.closePath();
-        //   this.context.stroke();
-        // }
-        // .
-        // for (let i = 0; i < (this.BOARD_ROWS + 1); i++) {
-        //   const y = (i * this.square);
-        //   this.context.beginPath();
-        //   this.context.lineWidth = 2;
-        //   this.context.moveTo(0 + this.margin, y + this.margin);
-        //   this.context.lineTo(this.canvas.width - this.margin, y + this.margin);
-        //   this.context.closePath();
-        //   this.context.stroke();
-        // }
-        // var metrics = this.context.measureText('3');
-        // .
         this.context.textAlign = 'center';
         this.context.textBaseline = 'middle';
-        this.context.font = ((this.square / 2) + 'px sans-serif');
+        this.context.font = ((this.square / 2) + 'px ' + this.fontFamilyText);
         this.context.fillStyle = this.fillStyleText;
         for (let row = 0; row < this.BOARD_ROWS; row++) {
             for (let column = 0; column < this.BOARD_COLUMNS; column++) {
-                this.context.fillText(this.puzzle[row][column], (this.square / 2) + (column * this.square) + this.margin, (this.square / 2) + (row * this.square) + this.margin);
+                this.context.fillText(this.puzzle[row][column], this.margin + (this.square / 2) + (this.square * column), this.margin + (this.square / 2) + (this.square * row));
             }
         }
         // .
         this.canvasDots.onclick = (e) => {
-            this.onClick(e.clientX, e.clientY);
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientX: ' + e.clientX);
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientY: ' + e.clientY);
+            this.onClick((e.clientX * this.clickAdjustX), (e.clientY * this.clickAdjustY));
         };
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: end');
     }
     /**
      * .
      */
     getCanvases() {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'getCanvases: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getCanvases: start');
         this.canvas = this.board.nativeElement;
         this.canvasDots = this.dots.nativeElement;
         this.getContexts();
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'getCanvases: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getCanvases: end');
     }
     /**
      * .
      */
     getContexts() {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'getContexts: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getContexts: start');
         this.context = this.canvas.getContext('2d');
         this.contextDots = this.canvasDots.getContext('2d');
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'getContexts: end');
-    }
-    /**
-     * .
-     *
-     * @param width
-     * @param height
-     */
-    setCanvasesSize(width, height) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'setCanvasesSize: start');
-        this.canvas.width = width;
-        this.canvas.height = height;
-        this.canvasDots.width = width;
-        this.canvasDots.height = height;
-        this.setCanvasBackgroundColor(width, height);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'setCanvasesSize: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getContexts: end');
     }
     /**
      * .
@@ -1018,16 +1018,16 @@ let BoardComponent = class BoardComponent {
      * @param h
      */
     setCanvasBackgroundColor(w, h) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'setCanvasBackgroundColor: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setCanvasBackgroundColor: start');
         this.context.fillStyle = this.fillStyleBackgroundColor;
         this.context.fillRect(0, 0, w, h);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'setCanvasBackgroundColor: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setCanvasBackgroundColor: end');
     }
     /**
      * .
      */
     drawDots() {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawDots: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawDots: start');
         this.contextDots.fillStyle = this.fillStyleDot;
         this.contextDots.beginPath();
         for (let i = 0; i < (this.BOARD_COLUMNS + 1); i++) {
@@ -1040,7 +1040,7 @@ let BoardComponent = class BoardComponent {
         }
         this.contextDots.closePath();
         this.contextDots.fill();
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawDots: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawDots: end');
     }
     /**
      * .
@@ -1049,13 +1049,15 @@ let BoardComponent = class BoardComponent {
      * @param clickY
      */
     onClick(clickX, clickY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClick: clickX: ' + clickX);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClick: clickY: ' + clickY);
         // .
         const detectX = this.onClickX(clickX);
         const detectY = this.onClickY(clickY);
         if ((detectX.line < 0) && (detectY.line < 0)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'onClick: No valid clicks detected.');
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: end');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: No valid clicks detected.');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
             return;
         }
         if ((detectX.line >= 0) && (detectY.line >= 0)) {
@@ -1066,24 +1068,24 @@ let BoardComponent = class BoardComponent {
                 detectX.line = -1;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: x: line: ' + detectX.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: y: line: ' + detectY.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: x: index: ' + detectX.index);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: y: index: ' + detectY.index);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: x: line: ' + detectX.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: y: line: ' + detectY.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: x: index: ' + detectX.index);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: y: index: ' + detectY.index);
         if (detectX.line >= 0) {
             // Out of range click detected.
             if (detectY.rangeOut) {
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: end');
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
                 return;
             }
             // .
             const state = this.onRightLeftClick(detectY.index, detectX.line);
             // .
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === state) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === state) {
                 this.drawVerticalLine(detectX.lineStart, detectY.indexStart);
             }
-            else if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_CROSS === state) {
+            else if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_CROSS === state) {
                 this.drawVerticalCross(detectX.lineStart, detectY.indexStart);
             }
             else {
@@ -1093,17 +1095,17 @@ let BoardComponent = class BoardComponent {
         else {
             // Out of range click detected.
             if (detectX.rangeOut) {
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: end');
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
                 return;
             }
             // .
             const state = this.onTopBottomClick(detectY.line, detectX.index);
             // .
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === state) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === state) {
                 this.drawHorizontalLine(detectX.indexStart, detectY.lineStart);
             }
-            else if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_CROSS === state) {
+            else if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_CROSS === state) {
                 this.drawHorizontalCross(detectX.indexStart, detectY.lineStart);
             }
             else {
@@ -1111,8 +1113,8 @@ let BoardComponent = class BoardComponent {
             }
         }
         // .
-        this.verify();
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'onClick: end');
+        const verify = this.verify();
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
     }
     /**
      * .
@@ -1120,8 +1122,8 @@ let BoardComponent = class BoardComponent {
      * @param clickX
      */
     onClickX(clickX) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onClickX: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onClickX: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickX: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickX: end');
         return this.detectClick(clickX, this.BOARD_COLUMNS);
     }
     /**
@@ -1130,8 +1132,8 @@ let BoardComponent = class BoardComponent {
      * @param clickY
      */
     onClickY(clickY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onClickY: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onClickY: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickY: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickY: end');
         return this.detectClick(clickY, this.BOARD_ROWS);
     }
     /**
@@ -1141,7 +1143,7 @@ let BoardComponent = class BoardComponent {
      * @param length
      */
     detectClick(click, length) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: start');
         const detect = {
             index: null,
             indexStart: null,
@@ -1157,22 +1159,22 @@ let BoardComponent = class BoardComponent {
                 break;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: line: ' + detect.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: range: ' + detect.range);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: line: ' + detect.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: range: ' + detect.range);
         detect.index = Math.floor((click - this.margin) / this.square);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: index: ' + detect.index);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: index: ' + detect.index);
         detect.indexStart = ((detect.index * this.square) + this.margin);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: indexStart: ' + detect.indexStart);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: indexStart: ' + detect.indexStart);
         if (detect.indexStart < this.margin) {
             detect.rangeOut = true;
         }
         else if (detect.indexStart >= ((this.square * length) + this.margin)) {
             detect.rangeOut = true;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: rangeOut: ' + detect.rangeOut);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: rangeOut: ' + detect.rangeOut);
         detect.lineStart = ((detect.line * this.square) + this.margin);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: lineStart: ' + detect.lineStart);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'detectClick: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: lineStart: ' + detect.lineStart);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: end');
         return detect;
     }
     /**
@@ -1182,18 +1184,18 @@ let BoardComponent = class BoardComponent {
      * @param column
      */
     onTopBottomClick(row, column) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onTopBottomClick: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onTopBottomClick: row: ' + row);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onTopBottomClick: column: ' + column);
-        let state = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_NONE;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: row: ' + row);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: column: ' + column);
+        let state = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_NONE;
         if (this.BOARD_ROWS > row) {
             state = this.points[row][column].onTopClick();
         }
         if (0 < row) {
             state = this.points[(row - 1)][column].onBottomClick();
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onTopBottomClick: state: ' + state);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onTopBottomClick: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: state: ' + state);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: end');
         return state;
     }
     /**
@@ -1203,18 +1205,18 @@ let BoardComponent = class BoardComponent {
      * @param column
      */
     onRightLeftClick(row, column) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onRightLeftClick: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onRightLeftClick: row: ' + row);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onRightLeftClick: column: ' + column);
-        let state = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_NONE;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: row: ' + row);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: column: ' + column);
+        let state = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_NONE;
         if (0 < column) {
             state = this.points[row][(column - 1)].onRightClick();
         }
         if (this.BOARD_COLUMNS > column) {
             state = this.points[row][column].onLeftClick();
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onRightLeftClick: state: ' + state);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'onRightLeftClick: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: state: ' + state);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: end');
         return state;
     }
     /**
@@ -1244,7 +1246,7 @@ let BoardComponent = class BoardComponent {
      * @param endY
      */
     drawLine(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawLine: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawLine: start');
         this.context.lineCap = this.lineCap;
         this.context.lineWidth = this.lineWidth;
         this.context.strokeStyle = this.strokeStyleLine;
@@ -1253,7 +1255,7 @@ let BoardComponent = class BoardComponent {
         this.context.lineTo(endX, endY);
         this.context.closePath();
         this.context.stroke();
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawLine: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawLine: end');
     }
     /**
      * .
@@ -1264,7 +1266,7 @@ let BoardComponent = class BoardComponent {
      * @param endY
      */
     clearLine(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'clearLine: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearLine: start');
         this.context.lineCap = this.lineCap;
         this.context.lineWidth = (this.lineWidth * 1.5);
         this.context.strokeStyle = this.strokeStyleClear;
@@ -1273,7 +1275,7 @@ let BoardComponent = class BoardComponent {
         this.context.lineTo(endX, endY);
         this.context.closePath();
         this.context.stroke();
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'clearLine: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearLine: end');
     }
     /**
      * .
@@ -1302,14 +1304,14 @@ let BoardComponent = class BoardComponent {
      * @param endY
      */
     drawCross(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawCross: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawCross: start');
         // .
         this.clearLine(startX, startY, endX, endY);
         // .
         this.context.fillStyle = this.fillStyleCross;
         this.context.font = (this.fontSizeCross + 'px ' + this.fontFamilyCross);
         this.context.fillText('×', ((startX + endX) / 2), ((startY + endY) / 2));
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'drawCross: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawCross: end');
     }
     /**
      * .
@@ -1338,78 +1340,49 @@ let BoardComponent = class BoardComponent {
      * @param endY
      */
     clearCross(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'clearCross: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearCross: start');
         this.context.fillStyle = this.fillStyleClear;
         this.context.font = (this.fontSizeCrossClear + 'px ' + this.fontFamilyCross);
         this.context.fillText('■', ((startX + endX) / 2), ((startY + endY) / 2));
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'clearCross: end');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearCross: end');
     }
-    // drawDot(x: number, y: number) {
-    //   Log.d(this.TAG, 'drawDot: start');
-    //   this.contextDots.fillStyle = this.fillStyleDot;
-    //   this.contextDots.beginPath();
-    //   this.contextDots.arc(x, y, this.lineRadius, 0, this.endAngleDot, false);
-    //   this.contextDots.closePath();
-    //   this.contextDots.fill();
-    //   Log.d(this.TAG, 'drawDot: end');
-    // }
-    // drawEndDots(startX: number, startY: number, endX: number, endY: number) {
-    //   Log.d(this.TAG, 'drawEndDots: start');
-    //   const endAngle = (Math.PI * 2);
-    //   this.contextDots.fillStyle = this.fillStyleEndDots;
-    //   this.contextDots.beginPath();
-    //   this.contextDots.arc(startX, startY, this.lineRadius, 0, endAngle, false);
-    //   this.contextDots.arc(endX, endY, this.lineRadius, 0, endAngle, false);
-    //   this.contextDots.closePath();
-    //   this.contextDots.fill();
-    //   Log.d(this.TAG, 'drawEndDots: end');
-    // }
-    // clearEndPoints(startX: number, startY: number, endX: number, endY: number) {
-    //   Log.d(this.TAG, 'clearEndPoints: start');
-    //   const endAngle = (Math.PI * 2);
-    //   this.context.fillStyle = this.fillStyleClear;
-    //   this.context.beginPath();
-    //   this.context.arc(startX, startY, this.lineRadius, 0, endAngle, false);
-    //   this.context.arc(endX, endY, this.lineRadius, 0, endAngle, false);
-    //   this.context.closePath();
-    //   this.context.fill();
-    //   Log.d(this.TAG, 'clearEndPoints: end');
-    // }
     /**
      * .
      */
     verify() {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: start');
         for (let row = 0; row < this.BOARD_ROWS; row++) {
             for (let column = 0; column < this.BOARD_COLUMNS; column++) {
                 // .
                 const point = this.points[row][column];
                 // .
                 const lines = point.getLines();
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: lines: ' + lines);
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: lines: ' + lines);
                 if (4 === lines) {
-                    _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verify: Impossible line count.');
-                    _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: end: false');
+                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verify: Impossible line count.');
+                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
                     return false;
                 }
                 // .
                 const no = this.puzzle[row][column];
-                _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: no: ' + no);
+                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: no: ' + no);
                 if ('' !== no) {
                     if (Number(no) !== lines) {
-                        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verify: Line count mismatch.');
-                        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: end: false');
+                        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verify: Line count mismatch.');
+                        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
                         return false;
                     }
                 }
                 // .
                 if (!this.verifyLink(row, column, point)) {
-                    _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: end: false');
+                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
                     return false;
                 }
+                // .
+                this.verifyLoop();
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'verify: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: true');
         return true;
     }
     /**
@@ -1420,24 +1393,24 @@ let BoardComponent = class BoardComponent {
      * @param point
      */
     verifyLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: start');
         if (!this.verifyTopLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
             return false;
         }
         if (!this.verifyBottomLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
             return false;
         }
         if (!this.verifyRightLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
             return false;
         }
         if (!this.verifyLeftLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
             return false;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: true');
         return true;
     }
     /**
@@ -1448,54 +1421,54 @@ let BoardComponent = class BoardComponent {
      * @param point
      */
     verifyTopLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: start');
-        point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getTop()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: start');
+        point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getTop()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: true');
             return true;
         }
         let linkRight = 0;
         let linkLeft = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getRight()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getRight()) {
             linkRight++;
-            point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getLeft()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getLeft()) {
             linkLeft++;
-            point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
         if ((this.BOARD_COLUMNS - 1) > column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getTop()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getTop()) {
                 linkRight++;
-                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
             }
         }
         if (0 < column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getTop()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getTop()) {
                 linkLeft++;
-                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
             }
         }
         if (0 < row) {
             const pointTop = this.points[(row - 1)][column];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointTop.getRight()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointTop.getRight()) {
                 linkRight++;
-                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
             }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointTop.getLeft()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointTop.getLeft()) {
                 linkLeft++;
-                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: linkRight: ' + linkRight);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: linkLeft: ' + linkLeft);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: linkRight: ' + linkRight);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: linkLeft: ' + linkLeft);
         if ((1 !== linkRight) || (1 !== linkLeft)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verifyTopLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyTopLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: false');
             return false;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyTopLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: true');
         return true;
     }
     /**
@@ -1506,54 +1479,54 @@ let BoardComponent = class BoardComponent {
      * @param point
      */
     verifyBottomLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: start');
-        point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getBottom()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: start');
+        point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getBottom()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
             return true;
         }
         let linkRight = 0;
         let linkLeft = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getRight()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getRight()) {
             linkRight++;
-            point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getLeft()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getLeft()) {
             linkLeft++;
-            point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
         if ((this.BOARD_COLUMNS - 1) > column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getBottom()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getBottom()) {
                 linkRight++;
-                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
             }
         }
         if (0 < column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getBottom()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getBottom()) {
                 linkLeft++;
-                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
             }
         }
         if ((this.BOARD_ROWS - 1) > row) {
             const pointBottom = this.points[(row + 1)][column];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointBottom.getRight()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointBottom.getRight()) {
                 linkRight++;
-                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
             }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointBottom.getLeft()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointBottom.getLeft()) {
                 linkLeft++;
-                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: linkRight: ' + linkRight);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: linkLeft: ' + linkLeft);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: linkRight: ' + linkRight);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: linkLeft: ' + linkLeft);
         if ((1 !== linkRight) || (1 !== linkLeft)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verifyBottomLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyBottomLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: false');
             return false;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
         return true;
     }
     /**
@@ -1564,54 +1537,54 @@ let BoardComponent = class BoardComponent {
      * @param point
      */
     verifyRightLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: start');
-        point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getRight()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: start');
+        point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getRight()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: true');
             return true;
         }
         let linkTop = 0;
         let linkBottom = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getTop()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getTop()) {
             linkTop++;
-            point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getBottom()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getBottom()) {
             linkBottom++;
-            point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
         if (0 < row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getRight()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getRight()) {
                 linkTop++;
-                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
             }
         }
         if ((this.BOARD_ROWS - 1) > row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getRight()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getRight()) {
                 linkBottom++;
-                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
             }
         }
         if ((this.BOARD_COLUMNS - 1) > column) {
             const pointRight = this.points[row][(column + 1)];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointRight.getTop()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointRight.getTop()) {
                 linkTop++;
-                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
             }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointRight.getBottom()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointRight.getBottom()) {
                 linkBottom++;
-                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: linkTop: ' + linkTop);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: linkBottom: ' + linkBottom);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: linkTop: ' + linkTop);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: linkBottom: ' + linkBottom);
         if ((1 !== linkTop) || (1 !== linkBottom)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verifyRightLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyRightLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: false');
             return false;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyRightLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: true');
         return true;
     }
     /**
@@ -1622,55 +1595,59 @@ let BoardComponent = class BoardComponent {
      * @param point
      */
     verifyLeftLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: start');
-        point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getLeft()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: start');
+        point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getLeft()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
             return true;
         }
         let linkTop = 0;
         let linkBottom = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getTop()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getTop()) {
             linkTop++;
-            point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getBottom()) {
+        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getBottom()) {
             linkBottom++;
-            point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+            point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
         }
         if (0 < row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getLeft()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getLeft()) {
                 linkTop++;
-                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
             }
         }
         if ((this.BOARD_ROWS - 1) > row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getLeft()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getLeft()) {
                 linkBottom++;
-                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
             }
         }
         if (0 < column) {
             const pointLeft = this.points[row][(column - 1)];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointLeft.getTop()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointLeft.getTop()) {
                 linkTop++;
-                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
             }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointLeft.getBottom()) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointLeft.getBottom()) {
                 linkBottom++;
-                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
             }
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: linkTop: ' + linkTop);
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: linkBottom: ' + linkBottom);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: linkTop: ' + linkTop);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: linkBottom: ' + linkBottom);
         if ((1 !== linkTop) || (1 !== linkBottom)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].i(this.TAG, 'verifyLeftLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: end: false');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyLeftLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: false');
             return false;
         }
-        _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
         return true;
+    }
+    verifyLoop() {
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verifyLoop: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verifyLoop: end');
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
