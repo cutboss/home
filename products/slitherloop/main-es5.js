@@ -1412,15 +1412,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.TAG = 'BoardComponent';
         this.BOARD_ROWS = 7;
         this.BOARD_COLUMNS = 7;
-        this.fillStyleBackgroundColor = '#f4511e';
+        this.COLORS = [{
+          fillStyleBackgroundColor: '#f4511e',
+          fillStyleText: '#fbe9e7',
+          fillStyleDot: '#bf360c',
+          strokeStyleLine: '#bf360c'
+        }, {
+          fillStyleBackgroundColor: '#ffffff',
+          fillStyleText: '#212121',
+          fillStyleDot: '#212121',
+          strokeStyleLine: '#ff9800'
+        }, {
+          fillStyleBackgroundColor: '#ff9800',
+          fillStyleText: '#fff3e0',
+          fillStyleDot: '#e65100',
+          strokeStyleLine: '#e65100'
+        }];
+        this.color = 2;
+        this.fillStyleBackgroundColor = this.COLORS[this.color].fillStyleBackgroundColor;
         this.fillStyleClear = this.fillStyleBackgroundColor;
         this.strokeStyleClear = this.fillStyleBackgroundColor; // private readonly fillStyleText = '#ffccbc';
 
-        this.fillStyleText = '#fbe9e7';
+        this.fillStyleText = this.COLORS[this.color].fillStyleText;
         this.endAngleDot = Math.PI * 2;
-        this.fillStyleDot = '#bf360c';
+        this.fillStyleDot = this.COLORS[this.color].fillStyleDot;
         this.lineCap = 'round';
-        this.strokeStyleLine = this.fillStyleDot;
+        this.strokeStyleLine = this.COLORS[this.color].strokeStyleLine;
         this.fontFamilyCross = 'sans-serif';
         this.fillStyleCross = this.strokeStyleLine;
         this.points = new Array();
@@ -1477,10 +1494,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.lineRadius = this.lineWidth;
           this.radiusDot = this.lineWidth;
 
-          _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: lineRadius: ' + this.lineRadius); // 8dp = 48dp / 6.
+          _util_log__WEBPACK_IMPORTED_MODULE_2__["Log"].d(this.TAG, 'ngAfterViewInit: lineRadius: ' + this.lineRadius); // 12dp = 48dp / 4.
 
 
-          this.clickRange = this.square / 6; // 20dp = 48dp / 12 * 5.
+          this.clickRange = this.square / 4; // 20dp = 48dp / 12 * 5.
 
           this.fontSizeCross = this.square / 12 * 5; // 24dp = 20dp / 5 * 6.
 
