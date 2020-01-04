@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admax -->\n<div id=\"admax-script\"></div>\n\n<!--  -->\n<div fxLayout=\"row\">\n  <!-- Side: Left -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=kindlebooks&banner=1VHMYJBW7SQVZ2XZ3A82&f=ifr&linkID=0b92b30c81d87e5eef175cfb039d1299&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=manga_anime&f=ifr&linkID=7e4aedc0d7b6b22569855599425a9018&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <!-- Admax -->\n      <div id=\"admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac\"\n           style=\"display:inline-block; width:300px; height:250px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=digital_software_game&banner=0SV7C57JBSN7TY2JAY82&f=ifr&linkID=cbcc54b23a12cfa08abe2c2f322a4953&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=comicbooks&banner=0ZGR806SDXBZAJ80PGR2&f=ifr&linkID=64597e2ed94500233bea96fe3a8bc2e8&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n\n  <!-- Containor -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"top center\"\n       [style.width]=\"containorStyleWidth\"\n       [style.height]=\"containorStyleHeight\"\n       [style.background-color]=\"containorStyleBackgroundColor\">\n    <!-- Canvas -->\n    <div style=\"position: relative;\"\n         [style.width]=\"canvasStyleWidth\"\n         [style.height]=\"canvasStyleHeight\">\n      <!-- Canvas: Board -->\n      <canvas #board\n              style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n\n      <!-- Canvas: Dots -->\n      <canvas #dots\n              style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n    </div>\n\n    <!-- Actions -->\n    <div fxLayout=\"row\"\n         fxLayoutAlign=\"center center\"\n         [style.width]=\"actionStyleWidth\"\n         [style.height]=\"actionStyleHeight\">\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n    </div>\n\n    <!-- Ads: 728 x 90 -->\n    <div *ngIf=\"isAds728x90\"\n         style=\"width: 728px; height: 90px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=kindlebooks&banner=1NKK9N8ZYQKQWW7GSSG2&f=ifr&linkID=f56f08131c9becbaa987bb34310ed32a&t=jempdac-22&tracking_id=jempdac-22\" width=\"728\" height=\"90\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 468 x 60 -->\n    <div *ngIf=\"isAds468x60\"\n         style=\"width: 468px; height: 60px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=13&l=ur1&category=digital_software_casualgame&banner=0V0TX5QCAAWHH6QM97G2&f=ifr&linkID=b56368396c69ee75dbb66b9c01183ef9&t=jempdac-22&tracking_id=jempdac-22\" width=\"468\" height=\"60\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 320 x 100 -->\n    <div *ngIf=\"isAds320x100\"\n         style=\"width: 320px; height: 100px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055\"\n           style=\"display:inline-block; width:320px; height:100px;\"></div>\n    </div>\n\n    <!-- Ads: 320 x 50 -->\n    <div *ngIf=\"isAds320x50\"\n         style=\"width: 320px; height: 50px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8\"\n           style=\"display:inline-block; width:320px; height:50px;\"></div>\n    </div>\n  </div>\n\n  <!-- Side: Right -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: 300 x 862 -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1JSHQVD35SQBTXM9Z3R2&f=ifr&linkID=921962a47d6f8ed04f1306b1e30bec81&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: 300 x 600 -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1TGWQPTZV9MH0WVN4AG2&f=ifr&linkID=2b474e378a3fd918a8acf7cdc54e8707&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=digital_software_game&banner=0AP2QSHJXCC2ZDT5A882&f=ifr&linkID=cafb505e9447189cf76f8d697cb40d5b&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 160 x 600 -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <!-- Amazon -->\n      <!-- <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=kindlerotate&f=ifr&linkID=93e657863f8f2545922e50cb26f70645&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe> -->\n\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-03785440d993\"\n           style=\"display:inline-block; width:160px; height:600px;\"></div>\n      <!-- <iframe src=\"https://adm.shinobi.jp/s/bb245b985e74083ad965927e0e64d839\"></iframe> -->\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=12100735a97b35acb399830b72fb39d2&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admax -->\n<div id=\"admax-script\"></div>\n\n<!--  -->\n<div fxLayout=\"row\">\n  <!-- Side: Left -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=kindlebooks&banner=1VHMYJBW7SQVZ2XZ3A82&f=ifr&linkID=0b92b30c81d87e5eef175cfb039d1299&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=manga_anime&f=ifr&linkID=7e4aedc0d7b6b22569855599425a9018&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <!-- Admax -->\n      <div id=\"admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac\"\n           style=\"display:inline-block; width:300px; height:250px;\"></div>\n    </div>\n\n    <!-- Ads: 160x 600 -->\n    <div *ngIf=\"isAds160x600\"\n         style=\"width: 160px; height: 600px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-03785440d993\"\n           style=\"display:inline-block; width:160px; height:600px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=comicbooks&banner=0ZGR806SDXBZAJ80PGR2&f=ifr&linkID=64597e2ed94500233bea96fe3a8bc2e8&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n\n  <!-- Containor -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"top center\"\n       [style.width]=\"containorStyleWidth\"\n       [style.height]=\"containorStyleHeight\"\n       [style.background-color]=\"containorStyleBackgroundColor\">\n\n    <!-- Header -->\n    <div fxLayout=\"row\"\n        fxLayoutAlign=\"center center\"\n        [style.width]=\"headerStyleWidth\"\n        [style.height]=\"headerStyleHeight\">\n    </div>\n\n    <!-- Canvas -->\n    <div style=\"position: relative;\"\n         [style.width]=\"canvasStyleWidth\"\n         [style.height]=\"canvasStyleHeight\">\n      <!-- Canvas: Board -->\n      <canvas #board\n              style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n\n      <!-- Canvas: Dots -->\n      <canvas #dots\n              style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n    </div>\n\n    <!-- Actions -->\n    <div fxLayout=\"row\"\n         fxLayoutAlign=\"center center\"\n         [style.width]=\"actionStyleWidth\"\n         [style.height]=\"actionStyleHeight\">\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n    </div>\n\n    <!-- Ads: 728 x 90 -->\n    <div *ngIf=\"isAds728x90\"\n         style=\"width: 728px; height: 90px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=kindlebooks&banner=1NKK9N8ZYQKQWW7GSSG2&f=ifr&linkID=f56f08131c9becbaa987bb34310ed32a&t=jempdac-22&tracking_id=jempdac-22\" width=\"728\" height=\"90\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 468 x 60 -->\n    <div *ngIf=\"isAds468x60\"\n         style=\"width: 468px; height: 60px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=13&l=ur1&category=digital_software_casualgame&banner=0V0TX5QCAAWHH6QM97G2&f=ifr&linkID=b56368396c69ee75dbb66b9c01183ef9&t=jempdac-22&tracking_id=jempdac-22\" width=\"468\" height=\"60\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 320 x 100 -->\n    <div *ngIf=\"isAds320x100\"\n         style=\"width: 320px; height: 100px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055\"\n           style=\"display:inline-block; width:320px; height:100px;\"></div>\n    </div>\n\n    <!-- Ads: 320 x 50 -->\n    <div *ngIf=\"isAds320x50\"\n         style=\"width: 320px; height: 50px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8\"\n           style=\"display:inline-block; width:320px; height:50px;\"></div>\n    </div>\n  </div>\n\n  <!-- Side: Right -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: 300 x 862 -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1JSHQVD35SQBTXM9Z3R2&f=ifr&linkID=921962a47d6f8ed04f1306b1e30bec81&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: 300 x 600 -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1TGWQPTZV9MH0WVN4AG2&f=ifr&linkID=2b474e378a3fd918a8acf7cdc54e8707&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=digital_software_game&banner=0AP2QSHJXCC2ZDT5A882&f=ifr&linkID=cafb505e9447189cf76f8d697cb40d5b&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 160 x 600 -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <!-- Amazon -->\n      <!-- <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=kindlerotate&f=ifr&linkID=93e657863f8f2545922e50cb26f70645&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe> -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=digital_software_game&banner=0SV7C57JBSN7TY2JAY82&f=ifr&linkID=cbcc54b23a12cfa08abe2c2f322a4953&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=12100735a97b35acb399830b72fb39d2&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -872,6 +872,7 @@ let BoardComponent = class BoardComponent {
         this.TAG = 'BoardComponent';
         this.BOARD_ROWS = 7;
         this.BOARD_COLUMNS = 7;
+        this.CANVAS_MARGIN = 28;
         this.canvasWidth = 2880;
         this.canvasHeight = 2880;
         this.isAds300x862 = false;
@@ -883,6 +884,15 @@ let BoardComponent = class BoardComponent {
         this.isAds320x100 = false;
         this.isAds320x50 = false;
         this.COLORS = [
+            // Red
+            {
+                fillStyleBackgroundColor: '#f44336',
+                fillStyleText: '#ffebee',
+                fillStyleDot: '#b71c1c',
+                strokeStyleLine: '#b71c1c',
+                containorStyleBackgroundColor: '#b71c1c',
+                sideStyleBackgroundColor: '#b71c1c'
+            },
             // Pink.
             // {
             //   fillStyleBackgroundColor: '#e91e63',
@@ -892,6 +902,15 @@ let BoardComponent = class BoardComponent {
             //   containorStyleBackgroundColor: '#880e4f',
             //   sideStyleBackgroundColor: '#880e4f'
             // },
+            // Purple.
+            {
+                fillStyleBackgroundColor: '#9c27b0',
+                fillStyleText: '#f3e5f5',
+                fillStyleDot: '#4a148c',
+                strokeStyleLine: '#4a148c',
+                containorStyleBackgroundColor: '#4a148c',
+                sideStyleBackgroundColor: '#4a148c'
+            },
             // Green.
             {
                 fillStyleBackgroundColor: '#4caf50',
@@ -962,26 +981,38 @@ let BoardComponent = class BoardComponent {
     ngOnInit() {
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: start');
         // .
-        // Log.v(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
-        // Log.v(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
-        // const min = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
-        // Log.v(this.TAG, 'ngOnInit: min: ' + min);
-        // .
-        this.actionHeight = 56;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: actionHeight: ' + this.actionHeight);
-        // .
         let min;
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
         if (window.innerWidth >= window.innerHeight) {
-            min = (window.innerHeight - this.actionHeight);
+            // .
+            this.headerHeight = (24 + (this.CANVAS_MARGIN * 2));
+            // .
+            this.actionHeight = (24 + (this.CANVAS_MARGIN * 2));
+            // .
+            min = (window.innerHeight - this.headerHeight - this.actionHeight);
         }
         else {
+            // .
+            this.headerHeight = 48;
+            // .
+            this.actionHeight = 48;
+            // .
             min = window.innerWidth;
         }
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerHeight: ' + this.headerHeight);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionHeight: ' + this.actionHeight);
         // .
-        this.actionWidth = min;
+        this.headerWidth = min;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: headerWidth: ' + this.headerWidth);
+        // .
+        this.actionWidth = this.headerWidth;
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: actionWidth: ' + this.actionWidth);
+        // .
+        this.headerStyleWidth = (this.headerWidth + 'px');
+        this.headerStyleHeight = (this.headerHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerStyleWidth: ' + this.headerStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerStyleHeight: ' + this.headerStyleHeight);
         // .
         this.actionStyleWidth = (this.actionWidth + 'px');
         this.actionStyleHeight = (this.actionHeight + 'px');
@@ -1018,73 +1049,12 @@ let BoardComponent = class BoardComponent {
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleWidth: ' + this.sideStyleWidth);
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleHeight: ' + this.sideStyleHeight);
         // .
-        if (0 < this.sideWidth) {
-            if ((300 < this.sideWidth) && (556 < this.sideHeight)) {
-                this.isAds300x556 = true;
-                if (862 < this.sideHeight) {
-                    this.isAds300x862 = true;
-                }
-                // .
-                window['admaxbanner'] = {
-                    admax_id: 'admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac',
-                    tag_id: '83479c5092c81ae8902bcc9b37c9c4f0',
-                    type: 'b',
-                    width: 300,
-                    height: 250
-                };
-            }
-            else if ((160 < this.sideWidth) && (600 < this.sideHeight)) {
-                this.isAds160x600 = true;
-                // .
-                window['admaxbanner'] = {
-                    admax_id: 'admax-banner-55e33185-bf2d-46b5-9de5-03785440d993',
-                    tag_id: 'bb245b985e74083ad965927e0e64d839',
-                    type: 'b',
-                    width: 160,
-                    height: 600
-                };
-            }
-            else if ((120 < this.sideWidth) && (600 < this.sideHeight)) {
-                this.isAds120x600 = true;
-            }
-        }
-        else {
-            const rest = (innerHeight - this.actionHeight - min);
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: rest: ' + rest);
-            if ((728 < this.containorWidth) && (90 < rest)) {
-                this.isAds728x90 = true;
-            }
-            else if ((468 < this.containorWidth) && (60 < rest)) {
-                this.isAds468x60 = true;
-            }
-            else if ((320 < this.containorWidth) && (100 < rest)) {
-                this.isAds320x100 = true;
-                // .
-                window['admaxbanner'] = {
-                    admax_id: 'admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055',
-                    tag_id: '2e46a0e3b055ae334fd3cd07afcaa16f',
-                    type: 'b',
-                    width: 320,
-                    height: 100
-                };
-            }
-            else if ((320 < this.containorWidth) && (50 < rest)) {
-                this.isAds320x50 = true;
-                // .
-                window['admaxbanner'] = {
-                    admax_id: 'admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8',
-                    tag_id: '440af44c9f428807e70df21cc8a3a0f8',
-                    type: 'b',
-                    width: 320,
-                    height: 50
-                };
-            }
-        }
-        // .
         this.clickAdjustX = (this.canvasWidth / Number(this.canvasStyleWidth.replace('px', '')));
         this.clickAdjustY = (this.canvasHeight / Number(this.canvasStyleHeight.replace('px', '')));
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustX: ' + this.clickAdjustX);
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustY: ' + this.clickAdjustY);
+        // .
+        this.setAds();
         // .
         for (let row = 0; row < this.BOARD_ROWS; row++) {
             this.points[row] = new Array();
@@ -1100,13 +1070,7 @@ let BoardComponent = class BoardComponent {
     ngAfterViewInit() {
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start');
         // .
-        if (this.isAds300x556 || this.isAds160x600 || this.isAds320x100 || this.isAds320x50) {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://adm.shinobi.jp/st/s.js';
-            const div = document.getElementById('admax-script');
-            div.insertAdjacentElement('afterend', script);
-        }
+        this.setAdMaxScript();
         // .
         this.getCanvases();
         // .
@@ -1153,13 +1117,97 @@ let BoardComponent = class BoardComponent {
         }
         // .
         this.canvasDots.onclick = (e) => {
+            // .
             _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientX: ' + e.clientX);
             _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientY: ' + e.clientY);
-            this.onClick((this.clickAdjustX * (e.clientX - this.sideWidth)), 
-            // (this.clickAdjustY * (e.clientY - this.actionHeight))
-            (this.clickAdjustY * e.clientY));
+            this.onClick((this.clickAdjustX * (e.clientX - this.sideWidth)), (this.clickAdjustY * (e.clientY - this.headerHeight)));
+            // .
+            e.stopPropagation();
         };
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: end');
+    }
+    /**
+     * .
+     */
+    setAds() {
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: start');
+        if (0 < this.sideWidth) {
+            // .
+            const padding = (this.CANVAS_MARGIN * 2);
+            // .
+            if (((300 + padding) < this.sideWidth) && (556 < this.sideHeight)) {
+                this.isAds300x556 = true;
+                if (862 < this.sideHeight) {
+                    this.isAds300x862 = true;
+                }
+                // .
+                this.setAdMaxBanner('admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac', '83479c5092c81ae8902bcc9b37c9c4f0', 300, 250);
+            }
+            else if (((160 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds160x600 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-03785440d993', 'bb245b985e74083ad965927e0e64d839', 160, 600);
+            }
+            else if (((120 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds120x600 = true;
+            }
+        }
+        else {
+            // .
+            const rest = (innerHeight - this.headerHeight - this.actionHeight - Number(this.canvasStyleHeight.replace('px', '')));
+            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: rest: ' + rest);
+            // .
+            if ((728 < this.containorWidth) && (90 < rest)) {
+                this.isAds728x90 = true;
+            }
+            else if ((468 < this.containorWidth) && (60 < rest)) {
+                this.isAds468x60 = true;
+            }
+            else if ((320 < this.containorWidth) && (100 < rest)) {
+                this.isAds320x100 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055', '2e46a0e3b055ae334fd3cd07afcaa16f', 320, 100);
+            }
+            else if ((320 < this.containorWidth) && (50 < rest)) {
+                this.isAds320x50 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8', '440af44c9f428807e70df21cc8a3a0f8', 320, 50);
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: end');
+    }
+    /**
+     * .
+     *
+     * @param adMaxId
+     * @param tagId
+     * @param w
+     * @param h
+     */
+    setAdMaxBanner(adMaxId, tagId, w, h) {
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxBanner: start');
+        window['admaxbanner'] = {
+            admax_id: adMaxId,
+            tag_id: tagId,
+            type: 'b',
+            width: w,
+            height: h
+        };
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxBanner: end');
+    }
+    /**
+     * .
+     */
+    setAdMaxScript() {
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxScript: start');
+        if (this.isAds300x556 || this.isAds160x600 || this.isAds320x100 || this.isAds320x50) {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://adm.shinobi.jp/st/s.js';
+            const div = document.getElementById('admax-script');
+            div.insertAdjacentElement('afterend', script);
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxScript: end');
     }
     /**
      * .
