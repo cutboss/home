@@ -363,7 +363,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Canvas -->\n<div style=\"position: relative;\">\n  <!-- Canvas: Board -->\n  <canvas #board\n          style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n\n  <!-- Canvas: Dots -->\n  <canvas #dots\n          style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n</div>\n";
+    __webpack_exports__["default"] = "<div id=\"script\"></div>\n<div class=\"admax-native\" data-admax-id=\"9d7dc135fb199a7f902c8ce80a05afcd\"></div>\n\n<!-- Canvas -->\n<div style=\"position: relative;\">\n  <!-- Canvas: Board -->\n  <canvas #board\n          style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n\n  <!-- Canvas: Dots -->\n  <canvas #dots\n          style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n</div>\n";
     /***/
   },
 
@@ -1512,7 +1512,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngAfterViewInit() {
           var _this = this;
 
-          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start'); // .
+          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start'); // // .
+
+
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://adm.shinobi.jp/st/na.js';
+          var div = document.getElementById('script');
+          div.insertAdjacentElement('afterend', script);
+
+          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: clientHeight' + div.clientHeight); // .
 
 
           this.getCanvases(); // .
@@ -1671,9 +1680,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onClick(clickX, clickY) {
           _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: start');
 
-          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClick: clickX: ' + clickX);
+          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: clickX: ' + clickX);
 
-          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClick: clickY: ' + clickY); // .
+          _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: clickY: ' + clickY); // .
 
 
           var detectX = this.onClickX(clickX);
