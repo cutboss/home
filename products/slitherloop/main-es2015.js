@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"script\"></div>\n<div class=\"admax-native\" data-admax-id=\"9d7dc135fb199a7f902c8ce80a05afcd\"></div>\n\n<!-- Canvas -->\n<div style=\"position: relative;\">\n  <!-- Canvas: Board -->\n  <canvas #board\n          style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n\n  <!-- Canvas: Dots -->\n  <canvas #dots\n          style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n          width={{canvasWidth}}\n          height={{canvasHeight}}\n          [style.width]=\"canvasStyleWidth\"\n          [style.height]=\"canvasStyleHeight\">\n  </canvas>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admax -->\n<div id=\"admax-script\"></div>\n\n<!--  -->\n<div fxLayout=\"row\">\n  <!-- Side: Left -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=kindlebooks&banner=1VHMYJBW7SQVZ2XZ3A82&f=ifr&linkID=0b92b30c81d87e5eef175cfb039d1299&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=manga_anime&f=ifr&linkID=7e4aedc0d7b6b22569855599425a9018&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <!-- Admax -->\n      <div id=\"admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac\"\n           style=\"display:inline-block; width:300px; height:250px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=digital_software_game&banner=0SV7C57JBSN7TY2JAY82&f=ifr&linkID=cbcc54b23a12cfa08abe2c2f322a4953&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=comicbooks&banner=0ZGR806SDXBZAJ80PGR2&f=ifr&linkID=64597e2ed94500233bea96fe3a8bc2e8&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n\n  <!-- Containor -->\n  <div fxLayout=\"column\"\n       [style.width]=\"containorStyleWidth\"\n       [style.height]=\"containorStyleHeight\"\n       [style.background-color]=\"containorStyleBackgroundColor\">\n    <!-- Actions -->\n    <div fxLayout=\"row\"\n         fxLayoutAlign=\"center center\"\n         [style.width]=\"actionStyleWidth\"\n         [style.height]=\"actionStyleHeight\">\n      <button mat-icon-button>\n        <mat-icon>favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon>favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon>favorite</mat-icon>\n      </button>\n    </div>\n\n    <!-- Canvas -->\n    <div style=\"position: relative;\"\n         [style.width]=\"canvasStyleWidth\"\n         [style.height]=\"canvasStyleHeight\">\n      <!-- Canvas: Board -->\n      <canvas #board\n              style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n\n      <!-- Canvas: Dots -->\n      <canvas #dots\n              style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n    </div>\n  </div>\n\n  <!-- Side: Right -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: 300 x 862 -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1JSHQVD35SQBTXM9Z3R2&f=ifr&linkID=921962a47d6f8ed04f1306b1e30bec81&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: 300 x 600 -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1TGWQPTZV9MH0WVN4AG2&f=ifr&linkID=2b474e378a3fd918a8acf7cdc54e8707&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=digital_software_game&banner=0AP2QSHJXCC2ZDT5A882&f=ifr&linkID=cafb505e9447189cf76f8d697cb40d5b&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 160 x 600 -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <!-- Amazon -->\n      <!-- <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=kindlerotate&f=ifr&linkID=93e657863f8f2545922e50cb26f70645&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe> -->\n\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-03785440d993\"\n           style=\"display:inline-block; width:160px; height:600px;\"></div>\n      <!-- <iframe src=\"https://adm.shinobi.jp/s/bb245b985e74083ad965927e0e64d839\"></iframe> -->\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=12100735a97b35acb399830b72fb39d2&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -655,6 +655,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var _board_board_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./board/board.component */ "./src/app/board/board.component.ts");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm2015/flex-layout.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm2015/icon.js");
+
+
+
 
 
 
@@ -673,7 +679,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
+            _angular_flex_layout__WEBPACK_IMPORTED_MODULE_7__["FlexLayoutModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -865,27 +874,51 @@ let BoardComponent = class BoardComponent {
         this.BOARD_COLUMNS = 7;
         this.canvasWidth = 2880;
         this.canvasHeight = 2880;
+        this.isAds300x862 = false;
+        this.isAds300x556 = false;
+        this.isAds160x600 = false;
+        this.isAds120x600 = false;
         this.COLORS = [
+            // Pink.
             {
-                fillStyleBackgroundColor: '#f4511e',
-                fillStyleText: '#fbe9e7',
-                fillStyleDot: '#bf360c',
-                strokeStyleLine: '#bf360c'
+                fillStyleBackgroundColor: '#e91e63',
+                fillStyleText: '#fce4ec',
+                fillStyleDot: '#880e4f',
+                strokeStyleLine: '#880e4f',
+                containorStyleBackgroundColor: '#880e4f',
+                sideStyleBackgroundColor: '#880e4f'
             },
+            // Green.
             {
-                fillStyleBackgroundColor: '#ffffff',
-                fillStyleText: '#212121',
-                fillStyleDot: '#212121',
-                strokeStyleLine: '#ff9800'
+                fillStyleBackgroundColor: '#4caf50',
+                fillStyleText: '#e8f5e9',
+                fillStyleDot: '#1b5e20',
+                strokeStyleLine: '#1b5e20',
+                containorStyleBackgroundColor: '#1b5e20',
+                sideStyleBackgroundColor: '#1b5e20'
             },
+            // Orange.
             {
                 fillStyleBackgroundColor: '#ff9800',
                 fillStyleText: '#fff3e0',
                 fillStyleDot: '#e65100',
-                strokeStyleLine: '#e65100'
+                strokeStyleLine: '#e65100',
+                containorStyleBackgroundColor: '#e65100',
+                sideStyleBackgroundColor: '#e65100'
+            },
+            // Blue Gray.
+            {
+                fillStyleBackgroundColor: '#607d8b',
+                fillStyleText: '#eceff1',
+                fillStyleDot: '#263238',
+                strokeStyleLine: '#263238',
+                containorStyleBackgroundColor: '#263238',
+                sideStyleBackgroundColor: '#263238'
             }
         ];
-        this.color = 2;
+        this.color = Math.floor(this.COLORS.length * Math.random());
+        this.containorStyleBackgroundColor = this.COLORS[this.color].containorStyleBackgroundColor;
+        this.sideStyleBackgroundColor = this.COLORS[this.color].sideStyleBackgroundColor;
         this.fillStyleBackgroundColor = this.COLORS[this.color].fillStyleBackgroundColor;
         this.fillStyleClear = this.fillStyleBackgroundColor;
         this.strokeStyleClear = this.fillStyleBackgroundColor;
@@ -907,10 +940,41 @@ let BoardComponent = class BoardComponent {
     ngOnInit() {
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: start');
         // .
+        // Log.v(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
+        // Log.v(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
+        // const min = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
+        // Log.v(this.TAG, 'ngOnInit: min: ' + min);
+        // .
+        this.actionHeight = 72; //Math.floor(56 * (window.innerWidth / 360));
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: actionHeight: ' + this.actionHeight);
+        // .
+        let min;
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
-        const min = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: min: ' + min);
+        if (window.innerWidth >= window.innerHeight) {
+            min = (window.innerHeight - this.actionHeight);
+        }
+        else {
+            min = window.innerWidth;
+        }
+        // .
+        this.actionWidth = min;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: actionWidth: ' + this.actionWidth);
+        // .
+        this.actionStyleWidth = (this.actionWidth + 'px');
+        this.actionStyleHeight = (this.actionHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionStyleWidth: ' + this.actionStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionStyleHeight: ' + this.actionStyleHeight);
+        // .
+        this.containorWidth = this.actionWidth;
+        this.containorHeight = window.innerHeight;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: containorWidth: ' + this.containorWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: containorHeight: ' + this.containorHeight);
+        // .
+        this.containorStyleWidth = (this.containorWidth + 'px');
+        this.containorStyleHeight = (this.containorHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: containorStyleWidth: ' + this.containorStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: containorStyleHeight: ' + this.containorStyleHeight);
         // .
         this.canvasWidth = (min * 2);
         this.canvasHeight = (min * 2);
@@ -921,6 +985,47 @@ let BoardComponent = class BoardComponent {
         this.canvasStyleHeight = (min + 'px');
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleWidth: ' + this.canvasStyleWidth);
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleHeight: ' + this.canvasStyleHeight);
+        // .
+        this.sideWidth = ((window.innerWidth - this.containorWidth) / 2);
+        this.sideHeight = this.containorHeight;
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: sideWidth: ' + this.sideWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: sideHeight: ' + this.sideHeight);
+        //
+        this.sideStyleWidth = (this.sideWidth + 'px');
+        this.sideStyleHeight = (this.sideHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleWidth: ' + this.sideStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleHeight: ' + this.sideStyleHeight);
+        // .
+        if (0 < this.sideWidth) {
+            if ((300 < this.sideWidth) && (556 < this.sideHeight)) {
+                this.isAds300x556 = true;
+                if (862 < this.sideHeight) {
+                    this.isAds300x862 = true;
+                }
+                // .
+                window['admaxbanner'] = {
+                    admax_id: 'admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac',
+                    tag_id: '83479c5092c81ae8902bcc9b37c9c4f0',
+                    type: 'b',
+                    width: 300,
+                    height: 250
+                };
+            }
+            else if ((160 < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds160x600 = true;
+                // .
+                window['admaxbanner'] = {
+                    admax_id: 'admax-banner-55e33185-bf2d-46b5-9de5-03785440d993',
+                    tag_id: 'bb245b985e74083ad965927e0e64d839',
+                    type: 'b',
+                    width: 160,
+                    height: 600
+                };
+            }
+            else if ((120 < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds120x600 = true;
+            }
+        }
         // .
         this.clickAdjustX = (this.canvasWidth / Number(this.canvasStyleWidth.replace('px', '')));
         this.clickAdjustY = (this.canvasHeight / Number(this.canvasStyleHeight.replace('px', '')));
@@ -940,13 +1045,14 @@ let BoardComponent = class BoardComponent {
      */
     ngAfterViewInit() {
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start');
-        // // .
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://adm.shinobi.jp/st/na.js';
-        const div = document.getElementById('script');
-        div.insertAdjacentElement('afterend', script);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: clientHeight' + div.clientHeight);
+        // .
+        if (this.isAds300x556 || this.isAds160x600) {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://adm.shinobi.jp/st/s.js';
+            const div = document.getElementById('admax-script');
+            div.insertAdjacentElement('afterend', script);
+        }
         // .
         this.getCanvases();
         // .
@@ -995,7 +1101,7 @@ let BoardComponent = class BoardComponent {
         this.canvasDots.onclick = (e) => {
             _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientX: ' + e.clientX);
             _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientY: ' + e.clientY);
-            this.onClick((e.clientX * this.clickAdjustX), (e.clientY * this.clickAdjustY));
+            this.onClick((this.clickAdjustX * (e.clientX - this.sideWidth)), (this.clickAdjustY * (e.clientY - this.actionHeight)));
         };
         _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: end');
     }
