@@ -318,20 +318,20 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-board></app-board>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<router-outlet></router-outlet>\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/board/board.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/stage/stage.component.html":
 /*!**********************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/board/board.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/stage/stage.component.html ***!
   \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admax -->\n<div id=\"admax-script\"></div>\n\n<!--  -->\n<div fxLayout=\"row\">\n  <!-- Side: Left -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=kindlebooks&banner=1VHMYJBW7SQVZ2XZ3A82&f=ifr&linkID=0b92b30c81d87e5eef175cfb039d1299&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=manga_anime&f=ifr&linkID=7e4aedc0d7b6b22569855599425a9018&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <!-- Admax -->\n      <div id=\"admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac\"\n           style=\"display:inline-block; width:300px; height:250px;\"></div>\n    </div>\n\n    <!-- Ads: 160x 600 -->\n    <div *ngIf=\"isAds160x600\"\n         style=\"width: 160px; height: 600px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-03785440d993\"\n           style=\"display:inline-block; width:160px; height:600px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=comicbooks&banner=0ZGR806SDXBZAJ80PGR2&f=ifr&linkID=64597e2ed94500233bea96fe3a8bc2e8&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n\n  <!-- Containor -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"top center\"\n       [style.width]=\"containorStyleWidth\"\n       [style.height]=\"containorStyleHeight\"\n       [style.background-color]=\"containorStyleBackgroundColor\">\n\n    <!-- Header -->\n    <div fxLayout=\"row\"\n        fxLayoutAlign=\"center center\"\n        [style.width]=\"headerStyleWidth\"\n        [style.height]=\"headerStyleHeight\">\n    </div>\n\n    <!-- Canvas -->\n    <div style=\"position: relative;\"\n         [style.width]=\"canvasStyleWidth\"\n         [style.height]=\"canvasStyleHeight\">\n      <!-- Canvas: Board -->\n      <canvas #board\n              style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n\n      <!-- Canvas: Dots -->\n      <canvas #dots\n              style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n    </div>\n\n    <!-- Actions -->\n    <div fxLayout=\"row\"\n         fxLayoutAlign=\"center center\"\n         [style.width]=\"actionStyleWidth\"\n         [style.height]=\"actionStyleHeight\">\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n    </div>\n\n    <!-- Ads: 728 x 90 -->\n    <div *ngIf=\"isAds728x90\"\n         style=\"width: 728px; height: 90px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=kindlebooks&banner=1NKK9N8ZYQKQWW7GSSG2&f=ifr&linkID=f56f08131c9becbaa987bb34310ed32a&t=jempdac-22&tracking_id=jempdac-22\" width=\"728\" height=\"90\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 468 x 60 -->\n    <div *ngIf=\"isAds468x60\"\n         style=\"width: 468px; height: 60px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=13&l=ur1&category=digital_software_casualgame&banner=0V0TX5QCAAWHH6QM97G2&f=ifr&linkID=b56368396c69ee75dbb66b9c01183ef9&t=jempdac-22&tracking_id=jempdac-22\" width=\"468\" height=\"60\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 320 x 100 -->\n    <div *ngIf=\"isAds320x100\"\n         style=\"width: 320px; height: 100px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055\"\n           style=\"display:inline-block; width:320px; height:100px;\"></div>\n    </div>\n\n    <!-- Ads: 320 x 50 -->\n    <div *ngIf=\"isAds320x50\"\n         style=\"width: 320px; height: 50px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8\"\n           style=\"display:inline-block; width:320px; height:50px;\"></div>\n    </div>\n  </div>\n\n  <!-- Side: Right -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: 300 x 862 -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1JSHQVD35SQBTXM9Z3R2&f=ifr&linkID=921962a47d6f8ed04f1306b1e30bec81&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: 300 x 600 -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1TGWQPTZV9MH0WVN4AG2&f=ifr&linkID=2b474e378a3fd918a8acf7cdc54e8707&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=digital_software_game&banner=0AP2QSHJXCC2ZDT5A882&f=ifr&linkID=cafb505e9447189cf76f8d697cb40d5b&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 160 x 600 -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <!-- Amazon -->\n      <!-- <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=kindlerotate&f=ifr&linkID=93e657863f8f2545922e50cb26f70645&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe> -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=digital_software_game&banner=0SV7C57JBSN7TY2JAY82&f=ifr&linkID=cbcc54b23a12cfa08abe2c2f322a4953&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=12100735a97b35acb399830b72fb39d2&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Admax -->\n<div id=\"admax-script\"></div>\n\n<!--  -->\n<div fxLayout=\"row\">\n  <!-- Side: Left -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=kindlebooks&banner=1VHMYJBW7SQVZ2XZ3A82&f=ifr&linkID=0b92b30c81d87e5eef175cfb039d1299&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=manga_anime&f=ifr&linkID=7e4aedc0d7b6b22569855599425a9018&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <!-- Admax -->\n      <div id=\"admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac\"\n           style=\"display:inline-block; width:300px; height:250px;\"></div>\n    </div>\n\n    <!-- Ads: 160x 600 -->\n    <div *ngIf=\"isAds160x600\"\n         style=\"width: 160px; height: 600px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-03785440d993\"\n           style=\"display:inline-block; width:160px; height:600px;\"></div>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=comicbooks&banner=0ZGR806SDXBZAJ80PGR2&f=ifr&linkID=64597e2ed94500233bea96fe3a8bc2e8&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n\n  <!-- Containor -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"top center\"\n       [style.width]=\"containorStyleWidth\"\n       [style.height]=\"containorStyleHeight\"\n       [style.background-color]=\"containorStyleBackgroundColor\">\n\n    <!-- Header -->\n    <div fxLayout=\"row\"\n        fxLayoutAlign=\"center center\"\n        [style.width]=\"headerStyleWidth\"\n        [style.height]=\"headerStyleHeight\">\n      <span [style.color]=\"fillStyleText\">{{color.name}}</span>\n    </div>\n\n    <!-- Canvas -->\n    <div style=\"position: relative;\"\n         [style.width]=\"canvasStyleWidth\"\n         [style.height]=\"canvasStyleHeight\">\n      <!-- Canvas: Board -->\n      <canvas #board\n              style=\"position: absolute; top: 0; left: 0; z-index: 0;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n\n      <!-- Canvas: Dots -->\n      <canvas #dots\n              style=\"position: absolute; top: 0; left: 0; z-index: 1;\"\n              width={{canvasWidth}}\n              height={{canvasHeight}}\n              [style.width]=\"canvasStyleWidth\"\n              [style.height]=\"canvasStyleHeight\">\n      </canvas>\n    </div>\n\n    <!-- Actions -->\n    <div fxLayout=\"row\"\n         fxLayoutAlign=\"center center\"\n         [style.width]=\"actionStyleWidth\"\n         [style.height]=\"actionStyleHeight\">\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n      <button mat-icon-button>\n        <mat-icon [style.color]=\"fillStyleText\">favorite</mat-icon>\n      </button>\n    </div>\n\n    <!-- Ads: 728 x 90 -->\n    <div *ngIf=\"isAds728x90\"\n         style=\"width: 728px; height: 90px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=kindlebooks&banner=1NKK9N8ZYQKQWW7GSSG2&f=ifr&linkID=f56f08131c9becbaa987bb34310ed32a&t=jempdac-22&tracking_id=jempdac-22\" width=\"728\" height=\"90\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 468 x 60 -->\n    <div *ngIf=\"isAds468x60\"\n         style=\"width: 468px; height: 60px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=13&l=ur1&category=digital_software_casualgame&banner=0V0TX5QCAAWHH6QM97G2&f=ifr&linkID=b56368396c69ee75dbb66b9c01183ef9&t=jempdac-22&tracking_id=jempdac-22\" width=\"468\" height=\"60\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 320 x 100 -->\n    <div *ngIf=\"isAds320x100\"\n         style=\"width: 320px; height: 100px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055\"\n           style=\"display:inline-block; width:320px; height:100px;\"></div>\n    </div>\n\n    <!-- Ads: 320 x 50 -->\n    <div *ngIf=\"isAds320x50\"\n         style=\"width: 320px; height: 50px;\">\n      <!-- Admax -->\n      <div id=\"admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8\"\n           style=\"display:inline-block; width:320px; height:50px;\"></div>\n    </div>\n  </div>\n\n  <!-- Side: Right -->\n  <div fxLayout=\"column\"\n       fxLayoutAlign=\"center center\"\n       [style.width]=\"sideStyleWidth\"\n       [style.height]=\"sideStyleHeight\"\n       [style.background-color]=\"sideStyleBackgroundColor\">\n    <!-- Ads: 300 x 862 -->\n    <div *ngIf=\"isAds300x862\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 306px;\">\n      <!-- Amazon -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1JSHQVD35SQBTXM9Z3R2&f=ifr&linkID=921962a47d6f8ed04f1306b1e30bec81&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n    </div>\n\n    <!-- Ads: 300 x 600 -->\n    <div *ngIf=\"isAds300x556\"\n         fxLayout=\"column\"\n         fxLayoutAlign=\"center center\"\n         style=\"width: 300px; height: 556px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=comicbooks&banner=1TGWQPTZV9MH0WVN4AG2&f=ifr&linkID=2b474e378a3fd918a8acf7cdc54e8707&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n\n      <!-- Space -->\n      <div style=\"height: 56px;\"></div>\n\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=digital_software_game&banner=0AP2QSHJXCC2ZDT5A882&f=ifr&linkID=cafb505e9447189cf76f8d697cb40d5b&t=jempdac-22&tracking_id=jempdac-22\" width=\"300\" height=\"250\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: 160 x 600 -->\n    <div *ngIf=\"isAds160x600\" style=\"width: 160px; height: 600px;\">\n      <!-- Amazon -->\n      <!-- <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=kindlerotate&f=ifr&linkID=93e657863f8f2545922e50cb26f70645&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe> -->\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=14&l=ur1&category=digital_software_game&banner=0SV7C57JBSN7TY2JAY82&f=ifr&linkID=cbcc54b23a12cfa08abe2c2f322a4953&t=jempdac-22&tracking_id=jempdac-22\" width=\"160\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n\n    <!-- Ads: -->\n    <div *ngIf=\"isAds120x600\" style=\"width: 120px; height: 600px;\">\n      <iframe src=\"https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=12100735a97b35acb399830b72fb39d2&t=jempdac-22&tracking_id=jempdac-22\" width=\"120\" height=\"600\" scrolling=\"no\" border=\"0\" marginwidth=\"0\" style=\"border:none;\" frameborder=\"0\"></iframe>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -577,15 +577,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _stage_stage_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./stage/stage.component */ "./src/app/stage/stage.component.ts");
 
 
 
-const routes = [];
+
+const routes = [
+    // {path: '', component: AppComponent},
+    { path: '', redirectTo: 'stage/1', pathMatch: 'full' },
+    { path: 'stage', redirectTo: 'stage/1', pathMatch: 'full' },
+    { path: 'stage/:id', component: _stage_stage_component__WEBPACK_IMPORTED_MODULE_3__["StageComponent"] }
+];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, {
+                useHash: true,
+                preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__["PreloadAllModules"]
+            })],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })
 ], AppRoutingModule);
@@ -654,7 +664,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-/* harmony import */ var _board_board_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./board/board.component */ "./src/app/board/board.component.ts");
+/* harmony import */ var _stage_stage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./stage/stage.component */ "./src/app/stage/stage.component.ts");
 /* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm2015/flex-layout.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm2015/icon.js");
@@ -674,7 +684,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-            _board_board_component__WEBPACK_IMPORTED_MODULE_6__["BoardComponent"]
+            _stage_stage_component__WEBPACK_IMPORTED_MODULE_6__["StageComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -693,9 +703,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/board/board-point.ts":
+/***/ "./src/app/stage/board-point.ts":
 /*!**************************************!*\
-  !*** ./src/app/board/board-point.ts ***!
+  !*** ./src/app/stage/board-point.ts ***!
   \**************************************/
 /*! exports provided: BoardPoint */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -831,1078 +841,244 @@ BoardPoint.LINK_LEFT = 5;
 
 /***/ }),
 
-/***/ "./src/app/board/board.component.css":
-/*!*******************************************!*\
-  !*** ./src/app/board/board.component.css ***!
-  \*******************************************/
-/*! exports provided: default */
+/***/ "./src/app/stage/stage-data.ts":
+/*!*************************************!*\
+  !*** ./src/app/stage/stage-data.ts ***!
+  \*************************************/
+/*! exports provided: StageData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2JvYXJkL2JvYXJkLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/board/board.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/board/board.component.ts ***!
-  \******************************************/
-/*! exports provided: BoardComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BoardComponent", function() { return BoardComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _board_point__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./board-point */ "./src/app/board/board-point.ts");
-/* harmony import */ var _puzzles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./puzzles */ "./src/app/board/puzzles.ts");
-/* harmony import */ var _util_log__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/log */ "./src/app/util/log.ts");
-
-
-
-
-
-let BoardComponent = class BoardComponent {
-    /**
-     * .
-     */
-    constructor() {
-        this.TAG = 'BoardComponent';
-        this.BOARD_ROWS = 7;
-        this.BOARD_COLUMNS = 7;
-        this.CANVAS_MARGIN = 28;
-        this.canvasWidth = 2880;
-        this.canvasHeight = 2880;
-        this.isAds300x862 = false;
-        this.isAds300x556 = false;
-        this.isAds160x600 = false;
-        this.isAds120x600 = false;
-        this.isAds728x90 = false;
-        this.isAds468x60 = false;
-        this.isAds320x100 = false;
-        this.isAds320x50 = false;
-        this.COLORS = [
-            // Red
-            {
-                fillStyleBackgroundColor: '#f44336',
-                fillStyleText: '#ffebee',
-                fillStyleDot: '#b71c1c',
-                strokeStyleLine: '#b71c1c',
-                containorStyleBackgroundColor: '#b71c1c',
-                sideStyleBackgroundColor: '#b71c1c'
-            },
-            // Pink.
-            // {
-            //   fillStyleBackgroundColor: '#e91e63',
-            //   fillStyleText: '#fce4ec',
-            //   fillStyleDot: '#880e4f',
-            //   strokeStyleLine: '#880e4f',
-            //   containorStyleBackgroundColor: '#880e4f',
-            //   sideStyleBackgroundColor: '#880e4f'
-            // },
-            // Purple.
-            {
-                fillStyleBackgroundColor: '#9c27b0',
-                fillStyleText: '#f3e5f5',
-                fillStyleDot: '#4a148c',
-                strokeStyleLine: '#4a148c',
-                containorStyleBackgroundColor: '#4a148c',
-                sideStyleBackgroundColor: '#4a148c'
-            },
-            // Green.
-            {
-                fillStyleBackgroundColor: '#4caf50',
-                fillStyleText: '#e8f5e9',
-                fillStyleDot: '#1b5e20',
-                strokeStyleLine: '#1b5e20',
-                containorStyleBackgroundColor: '#1b5e20',
-                sideStyleBackgroundColor: '#1b5e20'
-            },
-            // Orange.
-            {
-                fillStyleBackgroundColor: '#ff9800',
-                fillStyleText: '#fff3e0',
-                fillStyleDot: '#e65100',
-                strokeStyleLine: '#e65100',
-                containorStyleBackgroundColor: '#e65100',
-                sideStyleBackgroundColor: '#e65100'
-            },
-            // Brown.
-            {
-                fillStyleBackgroundColor: '#795548',
-                fillStyleText: '#efebe9',
-                fillStyleDot: '#3e2723',
-                strokeStyleLine: '#3e2723',
-                containorStyleBackgroundColor: '#3e2723',
-                sideStyleBackgroundColor: '#3e2723'
-            },
-            // Gray.
-            {
-                fillStyleBackgroundColor: '#9e9e9e',
-                fillStyleText: '#fafafa',
-                fillStyleDot: '#212121',
-                strokeStyleLine: '#212121',
-                containorStyleBackgroundColor: '#212121',
-                sideStyleBackgroundColor: '#212121'
-            },
-            // Blue Gray.
-            {
-                fillStyleBackgroundColor: '#607d8b',
-                fillStyleText: '#eceff1',
-                fillStyleDot: '#263238',
-                strokeStyleLine: '#263238',
-                containorStyleBackgroundColor: '#263238',
-                sideStyleBackgroundColor: '#263238'
-            }
-        ];
-        this.color = Math.floor(this.COLORS.length * Math.random());
-        this.containorStyleBackgroundColor = this.COLORS[this.color].containorStyleBackgroundColor;
-        this.sideStyleBackgroundColor = this.COLORS[this.color].sideStyleBackgroundColor;
-        this.fillStyleBackgroundColor = this.COLORS[this.color].fillStyleBackgroundColor;
-        this.fillStyleClear = this.fillStyleBackgroundColor;
-        this.strokeStyleClear = this.fillStyleBackgroundColor;
-        this.fontFamilyText = 'sans-serif';
-        this.fillStyleText = this.COLORS[this.color].fillStyleText;
-        this.endAngleDot = (Math.PI * 2);
-        this.fillStyleDot = this.COLORS[this.color].fillStyleDot;
-        this.lineCap = 'round';
-        this.strokeStyleLine = this.COLORS[this.color].strokeStyleLine;
-        this.fontFamilyCross = this.fontFamilyText;
-        this.fillStyleCross = this.strokeStyleLine;
-        this.points = new Array();
-        this.stage = 0;
-        this.puzzle = _puzzles__WEBPACK_IMPORTED_MODULE_3__["Puzzles"].get(this.stage);
-    }
-    /**
-     * .
-     */
-    ngOnInit() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: start');
-        // .
-        let min;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
-        if (window.innerWidth >= window.innerHeight) {
-            // .
-            this.headerHeight = (24 + (this.CANVAS_MARGIN * 2));
-            // .
-            this.actionHeight = (24 + (this.CANVAS_MARGIN * 2));
-            // .
-            min = (window.innerHeight - this.headerHeight - this.actionHeight);
-        }
-        else {
-            // .
-            this.headerHeight = 48;
-            // .
-            this.actionHeight = 48;
-            // .
-            min = window.innerWidth;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerHeight: ' + this.headerHeight);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionHeight: ' + this.actionHeight);
-        // .
-        this.headerWidth = min;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: headerWidth: ' + this.headerWidth);
-        // .
-        this.actionWidth = this.headerWidth;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: actionWidth: ' + this.actionWidth);
-        // .
-        this.headerStyleWidth = (this.headerWidth + 'px');
-        this.headerStyleHeight = (this.headerHeight + 'px');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerStyleWidth: ' + this.headerStyleWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: headerStyleHeight: ' + this.headerStyleHeight);
-        // .
-        this.actionStyleWidth = (this.actionWidth + 'px');
-        this.actionStyleHeight = (this.actionHeight + 'px');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionStyleWidth: ' + this.actionStyleWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: actionStyleHeight: ' + this.actionStyleHeight);
-        // .
-        this.containorWidth = this.actionWidth;
-        this.containorHeight = window.innerHeight;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: containorWidth: ' + this.containorWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: containorHeight: ' + this.containorHeight);
-        // .
-        this.containorStyleWidth = (this.containorWidth + 'px');
-        this.containorStyleHeight = (this.containorHeight + 'px');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: containorStyleWidth: ' + this.containorStyleWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: containorStyleHeight: ' + this.containorStyleHeight);
-        // .
-        this.canvasWidth = (min * 2);
-        this.canvasHeight = (min * 2);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasWidth: ' + this.canvasWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasHeight: ' + this.canvasHeight);
-        // .
-        this.canvasStyleWidth = (min + 'px');
-        this.canvasStyleHeight = (min + 'px');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleWidth: ' + this.canvasStyleWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: canvasStyleHeight: ' + this.canvasStyleHeight);
-        // .
-        this.sideWidth = ((window.innerWidth - this.containorWidth) / 2);
-        this.sideHeight = this.containorHeight;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: sideWidth: ' + this.sideWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: sideHeight: ' + this.sideHeight);
-        //
-        this.sideStyleWidth = (this.sideWidth + 'px');
-        this.sideStyleHeight = (this.sideHeight + 'px');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleWidth: ' + this.sideStyleWidth);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: sideStyleHeight: ' + this.sideStyleHeight);
-        // .
-        this.clickAdjustX = (this.canvasWidth / Number(this.canvasStyleWidth.replace('px', '')));
-        this.clickAdjustY = (this.canvasHeight / Number(this.canvasStyleHeight.replace('px', '')));
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustX: ' + this.clickAdjustX);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'ngOnInit: clickAdjustY: ' + this.clickAdjustY);
-        // .
-        this.setAds();
-        // .
-        for (let row = 0; row < this.BOARD_ROWS; row++) {
-            this.points[row] = new Array();
-            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
-                this.points[row][column] = new _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"]();
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngOnInit: end');
-    }
-    /**
-     * .
-     */
-    ngAfterViewInit() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: start');
-        // .
-        this.setAdMaxScript();
-        // .
-        this.getCanvases();
-        // .
-        const side = (this.canvasWidth > this.canvasHeight) ? this.canvasHeight : this.canvasWidth;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: side: ' + side);
-        // 48dp.
-        this.square = Math.floor((side * 2) / ((this.BOARD_COLUMNS * 2) + 1));
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: square: ' + this.square);
-        // 12dp = 48dp / 4.
-        this.margin = Math.floor((this.square / 2) / 2);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: margin: ' + this.margin);
-        // 4dp = 48dp / 12.
-        this.lineWidth = Math.floor(this.square / 12);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: lineWidth: ' + this.lineWidth);
-        // 4dp.
-        this.radiusDot = this.lineWidth;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: radiusDot: ' + this.radiusDot);
-        // 12dp = 48dp / 4.
-        // this.clickRange = Math.floor(this.square / 4);
-        this.clickRange = this.margin;
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: clickRange: ' + this.clickRange);
-        // 20dp = 48dp / 12 * 5.
-        this.fontSizeCross = Math.floor((this.square / 12) * 5);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCross: ' + this.fontSizeCross);
-        // 24dp = 20dp / 5 * 6.
-        this.fontSizeCrossClear = Math.floor((this.fontSizeCross / 5) * 6);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCrossClear: ' + this.fontSizeCrossClear);
-        // 360dp = (48dp x 7) + (12dp x 2).
-        // side = ((this.square * this.BOARD_COLUMNS) + (this.margin * 2));
-        // Log.d(this.TAG, 'ngAfterViewInit: side: ' + side);
-        // .
-        this.setCanvasBackgroundColor(this.canvasWidth, this.canvasHeight);
-        // .
-        this.drawDots();
-        // .
-        this.context.textAlign = 'center';
-        this.context.textBaseline = 'middle';
-        this.context.font = ((this.square / 2) + 'px ' + this.fontFamilyText);
-        this.context.fillStyle = this.fillStyleText;
-        for (let row = 0; row < this.BOARD_ROWS; row++) {
-            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
-                this.context.fillText(this.puzzle[row][column], this.margin + (this.square / 2) + (this.square * column), this.margin + (this.square / 2) + (this.square * row));
-            }
-        }
-        // .
-        this.canvasDots.onclick = (e) => {
-            // .
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientX: ' + e.clientX);
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onclick: e: clientY: ' + e.clientY);
-            this.onClick((this.clickAdjustX * (e.clientX - this.sideWidth)), (this.clickAdjustY * (e.clientY - this.headerHeight)));
-            // .
-            e.stopPropagation();
-        };
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'ngAfterViewInit: end');
-    }
-    /**
-     * .
-     */
-    setAds() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: start');
-        if (0 < this.sideWidth) {
-            // .
-            const padding = (this.CANVAS_MARGIN * 2);
-            // .
-            if (((300 + padding) < this.sideWidth) && (556 < this.sideHeight)) {
-                this.isAds300x556 = true;
-                if (862 < this.sideHeight) {
-                    this.isAds300x862 = true;
-                }
-                // .
-                this.setAdMaxBanner('admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac', '83479c5092c81ae8902bcc9b37c9c4f0', 300, 250);
-            }
-            else if (((160 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
-                this.isAds160x600 = true;
-                // .
-                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-03785440d993', 'bb245b985e74083ad965927e0e64d839', 160, 600);
-            }
-            else if (((120 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
-                this.isAds120x600 = true;
-            }
-        }
-        else {
-            // .
-            const rest = (innerHeight - this.headerHeight - this.actionHeight - Number(this.canvasStyleHeight.replace('px', '')));
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: rest: ' + rest);
-            // .
-            if ((728 < this.containorWidth) && (90 < rest)) {
-                this.isAds728x90 = true;
-            }
-            else if ((468 < this.containorWidth) && (60 < rest)) {
-                this.isAds468x60 = true;
-            }
-            else if ((320 < this.containorWidth) && (100 < rest)) {
-                this.isAds320x100 = true;
-                // .
-                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055', '2e46a0e3b055ae334fd3cd07afcaa16f', 320, 100);
-            }
-            else if ((320 < this.containorWidth) && (50 < rest)) {
-                this.isAds320x50 = true;
-                // .
-                this.setAdMaxBanner('admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8', '440af44c9f428807e70df21cc8a3a0f8', 320, 50);
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'setAds: end');
-    }
-    /**
-     * .
-     *
-     * @param adMaxId
-     * @param tagId
-     * @param w
-     * @param h
-     */
-    setAdMaxBanner(adMaxId, tagId, w, h) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxBanner: start');
-        window['admaxbanner'] = {
-            admax_id: adMaxId,
-            tag_id: tagId,
-            type: 'b',
-            width: w,
-            height: h
-        };
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxBanner: end');
-    }
-    /**
-     * .
-     */
-    setAdMaxScript() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxScript: start');
-        if (this.isAds300x556 || this.isAds160x600 || this.isAds320x100 || this.isAds320x50) {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://adm.shinobi.jp/st/s.js';
-            const div = document.getElementById('admax-script');
-            div.insertAdjacentElement('afterend', script);
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setAdMaxScript: end');
-    }
-    /**
-     * .
-     */
-    getCanvases() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getCanvases: start');
-        this.canvas = this.board.nativeElement;
-        this.canvasDots = this.dots.nativeElement;
-        this.getContexts();
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getCanvases: end');
-    }
-    /**
-     * .
-     */
-    getContexts() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getContexts: start');
-        this.context = this.canvas.getContext('2d');
-        this.contextDots = this.canvasDots.getContext('2d');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'getContexts: end');
-    }
-    /**
-     * .
-     *
-     * @param w
-     * @param h
-     */
-    setCanvasBackgroundColor(w, h) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setCanvasBackgroundColor: start');
-        this.context.fillStyle = this.fillStyleBackgroundColor;
-        this.context.fillRect(0, 0, w, h);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'setCanvasBackgroundColor: end');
-    }
-    /**
-     * .
-     */
-    drawDots() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawDots: start');
-        this.contextDots.fillStyle = this.fillStyleDot;
-        this.contextDots.beginPath();
-        for (let i = 0; i < (this.BOARD_COLUMNS + 1); i++) {
-            for (let j = 0; j < (this.BOARD_ROWS + 1); j++) {
-                const x = (this.margin + (i * this.square));
-                const y = (this.margin + (j * this.square));
-                this.contextDots.moveTo(x, y);
-                this.contextDots.arc(x, y, this.radiusDot, 0, this.endAngleDot, false);
-            }
-        }
-        this.contextDots.closePath();
-        this.contextDots.fill();
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawDots: end');
-    }
-    /**
-     * .
-     *
-     * @param clickX
-     * @param clickY
-     */
-    onClick(clickX, clickY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: clickX: ' + clickX);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: clickY: ' + clickY);
-        // .
-        const detectX = this.onClickX(clickX);
-        const detectY = this.onClickY(clickY);
-        if ((detectX.line < 0) && (detectY.line < 0)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: No valid clicks detected.');
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
-            return;
-        }
-        if ((detectX.line >= 0) && (detectY.line >= 0)) {
-            if (detectX.range < detectY.range) {
-                detectY.line = -1;
-            }
-            else {
-                detectX.line = -1;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: x: line: ' + detectX.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: y: line: ' + detectY.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: x: index: ' + detectX.index);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: y: index: ' + detectY.index);
-        if (detectX.line >= 0) {
-            // Out of range click detected.
-            if (detectY.rangeOut) {
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
-                return;
-            }
-            // .
-            const state = this.onRightLeftClick(detectY.index, detectX.line);
-            // .
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === state) {
-                this.drawVerticalLine(detectX.lineStart, detectY.indexStart);
-            }
-            else if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_CROSS === state) {
-                this.drawVerticalCross(detectX.lineStart, detectY.indexStart);
-            }
-            else {
-                this.clearVerticalCross(detectX.lineStart, detectY.indexStart);
-            }
-        }
-        else {
-            // Out of range click detected.
-            if (detectX.rangeOut) {
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
-                return;
-            }
-            // .
-            const state = this.onTopBottomClick(detectY.line, detectX.index);
-            // .
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === state) {
-                this.drawHorizontalLine(detectX.indexStart, detectY.lineStart);
-            }
-            else if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_CROSS === state) {
-                this.drawHorizontalCross(detectX.indexStart, detectY.lineStart);
-            }
-            else {
-                this.clearHorizontalCross(detectX.indexStart, detectY.lineStart);
-            }
-        }
-        // .
-        const verify = this.verify();
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'onClick: end');
-    }
-    /**
-     * .
-     *
-     * @param clickX
-     */
-    onClickX(clickX) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickX: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickX: end');
-        return this.detectClick(clickX, this.BOARD_COLUMNS);
-    }
-    /**
-     * .
-     *
-     * @param clickY
-     */
-    onClickY(clickY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickY: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onClickY: end');
-        return this.detectClick(clickY, this.BOARD_ROWS);
-    }
-    /**
-     * .
-     *
-     * @param click
-     * @param length
-     */
-    detectClick(click, length) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: start');
-        const detect = {
-            index: null,
-            indexStart: null,
-            line: -1,
-            lineStart: null,
-            range: null,
-            rangeOut: false
-        };
-        for (let i = 0; i < (length + 1); i++) {
-            detect.range = Math.abs(click - ((i * this.square) + this.margin));
-            if (detect.range <= this.clickRange) {
-                detect.line = i;
-                break;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: line: ' + detect.line);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: range: ' + detect.range);
-        detect.index = Math.floor((click - this.margin) / this.square);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: index: ' + detect.index);
-        detect.indexStart = ((detect.index * this.square) + this.margin);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: indexStart: ' + detect.indexStart);
-        if (detect.indexStart < this.margin) {
-            detect.rangeOut = true;
-        }
-        else if (detect.indexStart >= ((this.square * length) + this.margin)) {
-            detect.rangeOut = true;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: rangeOut: ' + detect.rangeOut);
-        detect.lineStart = ((detect.line * this.square) + this.margin);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: lineStart: ' + detect.lineStart);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'detectClick: end');
-        return detect;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     */
-    onTopBottomClick(row, column) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: row: ' + row);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: column: ' + column);
-        let state = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_NONE;
-        if (this.BOARD_ROWS > row) {
-            state = this.points[row][column].onTopClick();
-        }
-        if (0 < row) {
-            state = this.points[(row - 1)][column].onBottomClick();
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: state: ' + state);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onTopBottomClick: end');
-        return state;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     */
-    onRightLeftClick(row, column) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: row: ' + row);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: column: ' + column);
-        let state = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_NONE;
-        if (0 < column) {
-            state = this.points[row][(column - 1)].onRightClick();
-        }
-        if (this.BOARD_COLUMNS > column) {
-            state = this.points[row][column].onLeftClick();
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: state: ' + state);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'onRightLeftClick: end');
-        return state;
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    drawVerticalLine(x, y) {
-        this.drawLine(x, y, x, (y + this.square));
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    drawHorizontalLine(x, y) {
-        this.drawLine(x, y, (x + this.square), y);
-    }
-    /**
-     * .
-     *
-     * @param startX
-     * @param startY
-     * @param endX
-     * @param endY
-     */
-    drawLine(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawLine: start');
-        this.context.lineCap = this.lineCap;
-        this.context.lineWidth = this.lineWidth;
-        this.context.strokeStyle = this.strokeStyleLine;
-        this.context.beginPath();
-        this.context.moveTo(startX, startY);
-        this.context.lineTo(endX, endY);
-        this.context.closePath();
-        this.context.stroke();
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawLine: end');
-    }
-    /**
-     * .
-     *
-     * @param startX
-     * @param startY
-     * @param endX
-     * @param endY
-     */
-    clearLine(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearLine: start');
-        this.context.lineCap = this.lineCap;
-        this.context.lineWidth = (this.lineWidth * 1.5);
-        this.context.strokeStyle = this.strokeStyleClear;
-        this.context.beginPath();
-        this.context.moveTo(startX, startY);
-        this.context.lineTo(endX, endY);
-        this.context.closePath();
-        this.context.stroke();
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearLine: end');
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    drawVerticalCross(x, y) {
-        this.drawCross(x, y, x, (y + this.square));
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    drawHorizontalCross(x, y) {
-        this.drawCross(x, y, (x + this.square), y);
-    }
-    /**
-     * .
-     *
-     * @param startX
-     * @param startY
-     * @param endX
-     * @param endY
-     */
-    drawCross(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawCross: start');
-        // .
-        this.clearLine(startX, startY, endX, endY);
-        // .
-        this.context.fillStyle = this.fillStyleCross;
-        this.context.font = (this.fontSizeCross + 'px ' + this.fontFamilyCross);
-        this.context.fillText('×', ((startX + endX) / 2), ((startY + endY) / 2));
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'drawCross: end');
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    clearVerticalCross(x, y) {
-        this.clearCross(x, y, x, (y + this.square));
-    }
-    /**
-     * .
-     *
-     * @param x
-     * @param y
-     */
-    clearHorizontalCross(x, y) {
-        this.clearCross(x, y, (x + this.square), y);
-    }
-    /**
-     * .
-     *
-     * @param startX
-     * @param startY
-     * @param endX
-     * @param endY
-     */
-    clearCross(startX, startY, endX, endY) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearCross: start');
-        this.context.fillStyle = this.fillStyleClear;
-        this.context.font = (this.fontSizeCrossClear + 'px ' + this.fontFamilyCross);
-        this.context.fillText('■', ((startX + endX) / 2), ((startY + endY) / 2));
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'clearCross: end');
-    }
-    /**
-     * .
-     */
-    verify() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: start');
-        for (let row = 0; row < this.BOARD_ROWS; row++) {
-            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
-                // .
-                const point = this.points[row][column];
-                // .
-                const lines = point.getLines();
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: lines: ' + lines);
-                if (4 === lines) {
-                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verify: Impossible line count.');
-                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
-                    return false;
-                }
-                // .
-                const no = this.puzzle[row][column];
-                _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: no: ' + no);
-                if ('' !== no) {
-                    if (Number(no) !== lines) {
-                        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verify: Line count mismatch.');
-                        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
-                        return false;
-                    }
-                }
-                // .
-                if (!this.verifyLink(row, column, point)) {
-                    _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: false');
-                    return false;
-                }
-                // .
-                this.verifyLoop();
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verify: end: true');
-        return true;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     * @param point
-     */
-    verifyLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: start');
-        if (!this.verifyTopLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
-            return false;
-        }
-        if (!this.verifyBottomLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
-            return false;
-        }
-        if (!this.verifyRightLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
-            return false;
-        }
-        if (!this.verifyLeftLink(row, column, point)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: false');
-            return false;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLink: end: true');
-        return true;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     * @param point
-     */
-    verifyTopLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: start');
-        point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getTop()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: true');
-            return true;
-        }
-        let linkRight = 0;
-        let linkLeft = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getRight()) {
-            linkRight++;
-            point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getLeft()) {
-            linkLeft++;
-            point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if ((this.BOARD_COLUMNS - 1) > column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getTop()) {
-                linkRight++;
-                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
-            }
-        }
-        if (0 < column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getTop()) {
-                linkLeft++;
-                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
-            }
-        }
-        if (0 < row) {
-            const pointTop = this.points[(row - 1)][column];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointTop.getRight()) {
-                linkRight++;
-                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
-            }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointTop.getLeft()) {
-                linkLeft++;
-                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: linkRight: ' + linkRight);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: linkLeft: ' + linkLeft);
-        if ((1 !== linkRight) || (1 !== linkLeft)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyTopLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: false');
-            return false;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyTopLink: end: true');
-        return true;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     * @param point
-     */
-    verifyBottomLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: start');
-        point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getBottom()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
-            return true;
-        }
-        let linkRight = 0;
-        let linkLeft = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getRight()) {
-            linkRight++;
-            point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getLeft()) {
-            linkLeft++;
-            point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if ((this.BOARD_COLUMNS - 1) > column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getBottom()) {
-                linkRight++;
-                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
-            }
-        }
-        if (0 < column) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getBottom()) {
-                linkLeft++;
-                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
-            }
-        }
-        if ((this.BOARD_ROWS - 1) > row) {
-            const pointBottom = this.points[(row + 1)][column];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointBottom.getRight()) {
-                linkRight++;
-                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
-            }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointBottom.getLeft()) {
-                linkLeft++;
-                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: linkRight: ' + linkRight);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: linkLeft: ' + linkLeft);
-        if ((1 !== linkRight) || (1 !== linkLeft)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyBottomLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: false');
-            return false;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
-        return true;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     * @param point
-     */
-    verifyRightLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: start');
-        point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getRight()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: true');
-            return true;
-        }
-        let linkTop = 0;
-        let linkBottom = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getTop()) {
-            linkTop++;
-            point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getBottom()) {
-            linkBottom++;
-            point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (0 < row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getRight()) {
-                linkTop++;
-                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
-            }
-        }
-        if ((this.BOARD_ROWS - 1) > row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getRight()) {
-                linkBottom++;
-                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
-            }
-        }
-        if ((this.BOARD_COLUMNS - 1) > column) {
-            const pointRight = this.points[row][(column + 1)];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointRight.getTop()) {
-                linkTop++;
-                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
-            }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointRight.getBottom()) {
-                linkBottom++;
-                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_RIGHT;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: linkTop: ' + linkTop);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: linkBottom: ' + linkBottom);
-        if ((1 !== linkTop) || (1 !== linkBottom)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyRightLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: false');
-            return false;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyRightLink: end: true');
-        return true;
-    }
-    /**
-     * .
-     *
-     * @param row
-     * @param column
-     * @param point
-     */
-    verifyLeftLink(row, column, point) {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: start');
-        point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_NONE;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE !== point.getLeft()) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
-            return true;
-        }
-        let linkTop = 0;
-        let linkBottom = 0;
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getTop()) {
-            linkTop++;
-            point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === point.getBottom()) {
-            linkBottom++;
-            point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_THIS;
-        }
-        if (0 < row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getLeft()) {
-                linkTop++;
-                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_TOP;
-            }
-        }
-        if ((this.BOARD_ROWS - 1) > row) {
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getLeft()) {
-                linkBottom++;
-                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_BOTTOM;
-            }
-        }
-        if (0 < column) {
-            const pointLeft = this.points[row][(column - 1)];
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointLeft.getTop()) {
-                linkTop++;
-                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
-            }
-            if (_board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].STATE_LINE === pointLeft.getBottom()) {
-                linkBottom++;
-                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_2__["BoardPoint"].LINK_LEFT;
-            }
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: linkTop: ' + linkTop);
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: linkBottom: ' + linkBottom);
-        if ((1 !== linkTop) || (1 !== linkBottom)) {
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].i(this.TAG, 'verifyLeftLink: Illegal links.');
-            _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: false');
-            return false;
-        }
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
-        return true;
-    }
-    verifyLoop() {
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verifyLoop: start');
-        _util_log__WEBPACK_IMPORTED_MODULE_4__["Log"].d(this.TAG, 'verifyLoop: end');
-    }
-};
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('board', { static: false })
-], BoardComponent.prototype, "board", void 0);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('dots', { static: false })
-], BoardComponent.prototype, "dots", void 0);
-BoardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-board',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./board.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/board/board.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./board.component.css */ "./src/app/board/board.component.css")).default]
-    })
-], BoardComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/board/puzzles.ts":
-/*!**********************************!*\
-  !*** ./src/app/board/puzzles.ts ***!
-  \**********************************/
-/*! exports provided: Puzzles */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Puzzles", function() { return Puzzles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StageData", function() { return StageData; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-class Puzzles {
-    static get(stage) {
-        return this.STAGES[stage];
+class StageData {
+    /**
+     * .
+     *
+     * @returns
+     */
+    static randomColorIndex() {
+        return Math.floor(this.getColorTotal() * Math.random());
+    }
+    /**
+     * .
+     *
+     * @returns
+     */
+    static getColorTotal() {
+        return this.COLORS.length;
+    }
+    /**
+     * .
+     *
+     * @param index
+     * @returns
+     */
+    static getColor(index) {
+        return this.COLORS[index];
+    }
+    /**
+     * .
+     *
+     * @param stage
+     * @returns
+     */
+    static getPuzzle(stage) {
+        return this.PUZZLES[stage];
     }
 }
-Puzzles.STAGES = [
+StageData.COLORS = [
+    // Red
+    // {
+    //   fillStyleBackgroundColor: '#f44336',
+    //   fillStyleText: '#ffebee',
+    //   fillStyleDot: '#b71c1c',
+    //   strokeStyleLine: '#b71c1c',
+    //   containorStyleBackgroundColor: '#b71c1c',
+    //   sideStyleBackgroundColor: '#b71c1c'
+    // },
+    // Pink.
+    // {
+    //   fillStyleBackgroundColor: '#e91e63',
+    //   fillStyleText: '#fce4ec',
+    //   fillStyleDot: '#880e4f',
+    //   strokeStyleLine: '#880e4f',
+    //   containorStyleBackgroundColor: '#880e4f',
+    //   sideStyleBackgroundColor: '#880e4f'
+    // },
+    // Purple.
+    // {
+    //   fillStyleBackgroundColor: '#9c27b0',
+    //   fillStyleText: '#f3e5f5',
+    //   fillStyleDot: '#4a148c',
+    //   strokeStyleLine: '#4a148c',
+    //   containorStyleBackgroundColor: '#4a148c',
+    //   sideStyleBackgroundColor: '#4a148c'
+    // },
+    // Deep Purple.
+    {
+        name: 'Deep Purple',
+        fillStyleBackgroundColor: '#673AB7',
+        fillStyleText: '#EDE7F6',
+        fillStyleDot: '#311B92',
+        strokeStyleLine: '#311B92',
+        containorStyleBackgroundColor: '#311B92',
+        sideStyleBackgroundColor: '#311B92'
+    },
+    // Indigo.
+    {
+        name: 'Indigo',
+        fillStyleBackgroundColor: '#3F51B5',
+        fillStyleText: '#E8EAF6',
+        fillStyleDot: '#1A237E',
+        strokeStyleLine: '#1A237E',
+        containorStyleBackgroundColor: '#1A237E',
+        sideStyleBackgroundColor: '#1A237E'
+    },
+    // Blue.
+    {
+        name: 'Blue',
+        fillStyleBackgroundColor: '#2196F3',
+        fillStyleText: '#E3F2FD',
+        fillStyleDot: '#0D47A1',
+        strokeStyleLine: '#0D47A1',
+        containorStyleBackgroundColor: '#0D47A1',
+        sideStyleBackgroundColor: '#0D47A1'
+    },
+    // Light Blue.
+    {
+        name: 'Light Blue',
+        fillStyleBackgroundColor: '#03A9F4',
+        fillStyleText: '#E1F5FE',
+        fillStyleDot: '#01579B',
+        strokeStyleLine: '#01579B',
+        containorStyleBackgroundColor: '#01579B',
+        sideStyleBackgroundColor: '#01579B'
+    },
+    // Cyan.
+    {
+        name: 'Cyan',
+        fillStyleBackgroundColor: '#00BCD4',
+        fillStyleText: '#E0F7FA',
+        fillStyleDot: '#006064',
+        strokeStyleLine: '#006064',
+        containorStyleBackgroundColor: '#006064',
+        sideStyleBackgroundColor: '#006064'
+    },
+    // Teal.
+    {
+        name: 'Teal',
+        fillStyleBackgroundColor: '#009688',
+        fillStyleText: '#E0F2F1',
+        fillStyleDot: '#004D40',
+        strokeStyleLine: '#004D40',
+        containorStyleBackgroundColor: '#004D40',
+        sideStyleBackgroundColor: '#004D40'
+    },
+    // Green.
+    {
+        name: 'Green',
+        fillStyleBackgroundColor: '#4caf50',
+        fillStyleText: '#e8f5e9',
+        fillStyleDot: '#1b5e20',
+        strokeStyleLine: '#1b5e20',
+        containorStyleBackgroundColor: '#1b5e20',
+        sideStyleBackgroundColor: '#1b5e20'
+    },
+    // Light Green.
+    {
+        name: 'Light Green',
+        fillStyleBackgroundColor: '#8BC34A',
+        fillStyleText: '#F1F8E9',
+        fillStyleDot: '#33691E',
+        strokeStyleLine: '#33691E',
+        containorStyleBackgroundColor: '#33691E',
+        sideStyleBackgroundColor: '#33691E'
+    },
+    // Lime.
+    {
+        name: 'Lime',
+        fillStyleBackgroundColor: '#CDDC39',
+        fillStyleText: '#F9FBE7',
+        fillStyleDot: '#827717',
+        strokeStyleLine: '#827717',
+        containorStyleBackgroundColor: '#827717',
+        sideStyleBackgroundColor: '#827717'
+    },
+    // Yellow.
+    {
+        name: 'Yellow',
+        fillStyleBackgroundColor: '#FFEB3B',
+        fillStyleText: '#FFFDE7',
+        fillStyleDot: '#F57F17',
+        strokeStyleLine: '#F57F17',
+        containorStyleBackgroundColor: '#F57F17',
+        sideStyleBackgroundColor: '#F57F17'
+    },
+    // Amber.
+    {
+        name: 'Amber',
+        fillStyleBackgroundColor: '#FFC107',
+        fillStyleText: '#FFF8E1',
+        fillStyleDot: '#FF6F00',
+        strokeStyleLine: '#FF6F00',
+        containorStyleBackgroundColor: '#FF6F00',
+        sideStyleBackgroundColor: '#FF6F00'
+    },
+    // Orange.
+    {
+        name: 'Orange',
+        fillStyleBackgroundColor: '#ff9800',
+        fillStyleText: '#fff3e0',
+        fillStyleDot: '#e65100',
+        strokeStyleLine: '#e65100',
+        containorStyleBackgroundColor: '#e65100',
+        sideStyleBackgroundColor: '#e65100'
+    },
+    // Deep Orange.
+    {
+        name: 'Deep Orange',
+        fillStyleBackgroundColor: '#FF5722',
+        fillStyleText: '#FBE9E7',
+        fillStyleDot: '#BF360C',
+        strokeStyleLine: '#BF360C',
+        containorStyleBackgroundColor: '#BF360C',
+        sideStyleBackgroundColor: '#BF360C'
+    },
+    // Brown.
+    {
+        name: 'Brown',
+        fillStyleBackgroundColor: '#795548',
+        fillStyleText: '#efebe9',
+        fillStyleDot: '#3e2723',
+        strokeStyleLine: '#3e2723',
+        containorStyleBackgroundColor: '#3e2723',
+        sideStyleBackgroundColor: '#3e2723'
+    },
+    // Gray.
+    {
+        name: 'Gray',
+        fillStyleBackgroundColor: '#9e9e9e',
+        fillStyleText: '#fafafa',
+        fillStyleDot: '#212121',
+        strokeStyleLine: '#212121',
+        containorStyleBackgroundColor: '#212121',
+        sideStyleBackgroundColor: '#212121'
+    },
+    // Blue Gray.
+    {
+        name: 'Blue Gray',
+        fillStyleBackgroundColor: '#607d8b',
+        fillStyleText: '#eceff1',
+        fillStyleDot: '#263238',
+        strokeStyleLine: '#263238',
+        containorStyleBackgroundColor: '#263238',
+        sideStyleBackgroundColor: '#263238'
+    }
+];
+StageData.PUZZLES = [
     [
         ['3', '1', '', '', '3', '3', ''],
         ['2', '3', '', '', '2', '2', ''],
@@ -1985,6 +1161,1031 @@ Puzzles.STAGES = [
         ['', '', '', '', '', '', '']
     ]
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/stage/stage.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/stage/stage.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N0YWdlL3N0YWdlLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/stage/stage.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/stage/stage.component.ts ***!
+  \******************************************/
+/*! exports provided: StageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StageComponent", function() { return StageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _board_point__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./board-point */ "./src/app/stage/board-point.ts");
+/* harmony import */ var _stage_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./stage-data */ "./src/app/stage/stage-data.ts");
+/* harmony import */ var _util_log__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/log */ "./src/app/util/log.ts");
+
+
+
+
+
+
+let StageComponent = class StageComponent {
+    /**
+     * @description
+     * .
+     */
+    constructor(router, route) {
+        this.router = router;
+        this.route = route;
+        this.TAG = 'StageComponent';
+        this.BOARD_ROWS = 7;
+        this.BOARD_COLUMNS = 7;
+        this.CANVAS_MARGIN = 28;
+        this.canvasWidth = 2880;
+        this.canvasHeight = 2880;
+        this.isAds300x862 = false;
+        this.isAds300x556 = false;
+        this.isAds160x600 = false;
+        this.isAds120x600 = false;
+        this.isAds728x90 = false;
+        this.isAds468x60 = false;
+        this.isAds320x100 = false;
+        this.isAds320x50 = false;
+        this.colorIndex = _stage_data__WEBPACK_IMPORTED_MODULE_4__["StageData"].randomColorIndex();
+        this.color = _stage_data__WEBPACK_IMPORTED_MODULE_4__["StageData"].getColor(this.colorIndex);
+        this.containorStyleBackgroundColor = this.color.containorStyleBackgroundColor;
+        this.sideStyleBackgroundColor = this.color.sideStyleBackgroundColor;
+        this.fillStyleBackgroundColor = this.color.fillStyleBackgroundColor;
+        this.fillStyleClear = this.fillStyleBackgroundColor;
+        this.strokeStyleClear = this.fillStyleBackgroundColor;
+        this.fontFamilyText = 'sans-serif';
+        this.fillStyleText = this.color.fillStyleText;
+        this.endAngleDot = (Math.PI * 2);
+        this.fillStyleDot = this.color.fillStyleDot;
+        this.lineCap = 'round';
+        this.strokeStyleLine = this.color.strokeStyleLine;
+        this.fontFamilyCross = this.fontFamilyText;
+        this.fillStyleCross = this.strokeStyleLine;
+        this.points = new Array();
+        this.stage = 0;
+        this.puzzle = _stage_data__WEBPACK_IMPORTED_MODULE_4__["StageData"].getPuzzle(this.stage);
+    }
+    /**
+     * .
+     */
+    ngOnInit() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: start');
+        // .
+        this.route.paramMap.subscribe((params) => {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: start');
+            // .
+            const id = params.get('id');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: id: ' + id);
+            if (!isNaN(Number(id))) {
+                const stage = (Number(id) - 1);
+                if (this.stage !== stage) {
+                    this.stage = stage;
+                    _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: stage: ' + this.stage);
+                    this.puzzle = _stage_data__WEBPACK_IMPORTED_MODULE_4__["StageData"].getPuzzle(this.stage);
+                    // .
+                    this.drawPuzzle();
+                }
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: end');
+                return;
+            }
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: stage: ' + this.stage);
+            // .
+            this.router.navigate(['/stage', (this.stage + 1)]);
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: subscribe: end');
+        });
+        // .
+        let min;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: window: innerWidth: ' + window.innerWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: window: innerHeight: ' + window.innerHeight);
+        if (window.innerWidth >= window.innerHeight) {
+            // .
+            this.headerHeight = (24 + (this.CANVAS_MARGIN * 2));
+            // .
+            this.actionHeight = (24 + (this.CANVAS_MARGIN * 2));
+            // .
+            min = (window.innerHeight - this.headerHeight - this.actionHeight);
+        }
+        else {
+            // .
+            this.headerHeight = 48;
+            // .
+            this.actionHeight = 48;
+            // .
+            min = window.innerWidth;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: headerHeight: ' + this.headerHeight);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: actionHeight: ' + this.actionHeight);
+        // .
+        this.headerWidth = min;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: headerWidth: ' + this.headerWidth);
+        // .
+        this.actionWidth = this.headerWidth;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: actionWidth: ' + this.actionWidth);
+        // .
+        this.headerStyleWidth = (this.headerWidth + 'px');
+        this.headerStyleHeight = (this.headerHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: headerStyleWidth: ' + this.headerStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: headerStyleHeight: ' + this.headerStyleHeight);
+        // .
+        this.actionStyleWidth = (this.actionWidth + 'px');
+        this.actionStyleHeight = (this.actionHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: actionStyleWidth: ' + this.actionStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: actionStyleHeight: ' + this.actionStyleHeight);
+        // .
+        this.containorWidth = this.actionWidth;
+        this.containorHeight = window.innerHeight;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: containorWidth: ' + this.containorWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: containorHeight: ' + this.containorHeight);
+        // .
+        this.containorStyleWidth = (this.containorWidth + 'px');
+        this.containorStyleHeight = (this.containorHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: containorStyleWidth: ' + this.containorStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: containorStyleHeight: ' + this.containorStyleHeight);
+        // .
+        this.canvasWidth = (min * 2);
+        this.canvasHeight = (min * 2);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: canvasWidth: ' + this.canvasWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: canvasHeight: ' + this.canvasHeight);
+        // .
+        this.canvasStyleWidth = (min + 'px');
+        this.canvasStyleHeight = (min + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: canvasStyleWidth: ' + this.canvasStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: canvasStyleHeight: ' + this.canvasStyleHeight);
+        // .
+        this.sideWidth = ((window.innerWidth - this.containorWidth) / 2);
+        this.sideHeight = this.containorHeight;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: sideWidth: ' + this.sideWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: sideHeight: ' + this.sideHeight);
+        //
+        this.sideStyleWidth = (this.sideWidth + 'px');
+        this.sideStyleHeight = (this.sideHeight + 'px');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: sideStyleWidth: ' + this.sideStyleWidth);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: sideStyleHeight: ' + this.sideStyleHeight);
+        // .
+        this.clickAdjustX = (this.canvasWidth / Number(this.canvasStyleWidth.replace('px', '')));
+        this.clickAdjustY = (this.canvasHeight / Number(this.canvasStyleHeight.replace('px', '')));
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: clickAdjustX: ' + this.clickAdjustX);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'ngOnInit: clickAdjustY: ' + this.clickAdjustY);
+        // .
+        this.setAds();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngOnInit: end');
+    }
+    /**
+     * .
+     */
+    ngAfterViewInit() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: start');
+        // .
+        this.setAdMaxScript();
+        // .
+        this.getCanvases();
+        // .
+        const side = (this.canvasWidth > this.canvasHeight) ? this.canvasHeight : this.canvasWidth;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: side: ' + side);
+        // 48dp.
+        this.square = Math.floor((side * 2) / ((this.BOARD_COLUMNS * 2) + 1));
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: square: ' + this.square);
+        // 12dp = 48dp / 4.
+        this.margin = Math.floor((this.square / 2) / 2);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: margin: ' + this.margin);
+        // 4dp = 48dp / 12.
+        this.lineWidth = Math.floor(this.square / 12);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: lineWidth: ' + this.lineWidth);
+        // 4dp.
+        this.radiusDot = this.lineWidth;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: radiusDot: ' + this.radiusDot);
+        // 12dp = 48dp / 4.
+        // this.clickRange = Math.floor(this.square / 4);
+        this.clickRange = this.margin;
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: clickRange: ' + this.clickRange);
+        // 20dp = 48dp / 12 * 5.
+        this.fontSizeCross = Math.floor((this.square / 12) * 5);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCross: ' + this.fontSizeCross);
+        // 24dp = 20dp / 5 * 6.
+        this.fontSizeCrossClear = Math.floor((this.fontSizeCross / 5) * 6);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: fontSizeCrossClear: ' + this.fontSizeCrossClear);
+        // 360dp = (48dp x 7) + (12dp x 2).
+        // side = ((this.square * this.BOARD_COLUMNS) + (this.margin * 2));
+        // Log.d(this.TAG, 'ngAfterViewInit: side: ' + side);
+        // .
+        this.drawDots();
+        // .
+        this.drawPuzzle();
+        // .
+        this.canvasDots.onclick = (e) => {
+            // .
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onclick: e: clientX: ' + e.clientX);
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onclick: e: clientY: ' + e.clientY);
+            this.onClick((this.clickAdjustX * (e.clientX - this.sideWidth)), (this.clickAdjustY * (e.clientY - this.headerHeight)));
+            // .
+            e.stopPropagation();
+        };
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'ngAfterViewInit: end');
+    }
+    /**
+     * .
+     */
+    setAds() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'setAds: start');
+        if (0 < this.sideWidth) {
+            // .
+            const padding = (this.CANVAS_MARGIN * 2);
+            // .
+            if (((300 + padding) < this.sideWidth) && (556 < this.sideHeight)) {
+                this.isAds300x556 = true;
+                if (862 < this.sideHeight) {
+                    this.isAds300x862 = true;
+                }
+                // .
+                this.setAdMaxBanner('admax-banner-9509f2af-d902-4fa0-98e8-cc6f1db7aeac', '83479c5092c81ae8902bcc9b37c9c4f0', 300, 250);
+            }
+            else if (((160 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds160x600 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-03785440d993', 'bb245b985e74083ad965927e0e64d839', 160, 600);
+            }
+            else if (((120 + padding) < this.sideWidth) && (600 < this.sideHeight)) {
+                this.isAds120x600 = true;
+            }
+        }
+        else {
+            // .
+            const rest = (innerHeight - this.headerHeight - this.actionHeight - Number(this.canvasStyleHeight.replace('px', '')));
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'setAds: rest: ' + rest);
+            // .
+            if ((728 < this.containorWidth) && (90 < rest)) {
+                this.isAds728x90 = true;
+            }
+            else if ((468 < this.containorWidth) && (60 < rest)) {
+                this.isAds468x60 = true;
+            }
+            else if ((320 < this.containorWidth) && (100 < rest)) {
+                this.isAds320x100 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-55e33185-bf2d-46b5-9de5-2e46a0e3b055', '2e46a0e3b055ae334fd3cd07afcaa16f', 320, 100);
+            }
+            else if ((320 < this.containorWidth) && (50 < rest)) {
+                this.isAds320x50 = true;
+                // .
+                this.setAdMaxBanner('admax-banner-440af44c-9f42-8807-e70d-f21cc8a3a0f8', '440af44c9f428807e70df21cc8a3a0f8', 320, 50);
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'setAds: end');
+    }
+    /**
+     * .
+     *
+     * @param adMaxId
+     * @param tagId
+     * @param w
+     * @param h
+     */
+    setAdMaxBanner(adMaxId, tagId, w, h) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setAdMaxBanner: start');
+        window['admaxbanner'] = {
+            admax_id: adMaxId,
+            tag_id: tagId,
+            type: 'b',
+            width: w,
+            height: h
+        };
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setAdMaxBanner: end');
+    }
+    /**
+     * .
+     */
+    setAdMaxScript() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setAdMaxScript: start');
+        if (this.isAds300x556 || this.isAds160x600 || this.isAds320x100 || this.isAds320x50) {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://adm.shinobi.jp/st/s.js';
+            const div = document.getElementById('admax-script');
+            div.insertAdjacentElement('afterend', script);
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setAdMaxScript: end');
+    }
+    /**
+     * .
+     */
+    getCanvases() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'getCanvases: start');
+        this.canvas = this.board.nativeElement;
+        this.canvasDots = this.dots.nativeElement;
+        this.getContexts();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'getCanvases: end');
+    }
+    /**
+     * .
+     */
+    getContexts() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'getContexts: start');
+        this.context = this.canvas.getContext('2d');
+        this.contextDots = this.canvasDots.getContext('2d');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'getContexts: end');
+    }
+    /**
+     * .
+     *
+     * @param w
+     * @param h
+     */
+    setCanvasBackgroundColor(w, h) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setCanvasBackgroundColor: start');
+        this.context.fillStyle = this.fillStyleBackgroundColor;
+        this.context.fillRect(0, 0, w, h);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'setCanvasBackgroundColor: end');
+    }
+    /**
+     * .
+     */
+    drawDots() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawDots: start');
+        this.contextDots.fillStyle = this.fillStyleDot;
+        this.contextDots.beginPath();
+        for (let i = 0; i < (this.BOARD_COLUMNS + 1); i++) {
+            for (let j = 0; j < (this.BOARD_ROWS + 1); j++) {
+                const x = (this.margin + (i * this.square));
+                const y = (this.margin + (j * this.square));
+                this.contextDots.moveTo(x, y);
+                this.contextDots.arc(x, y, this.radiusDot, 0, this.endAngleDot, false);
+            }
+        }
+        this.contextDots.closePath();
+        this.contextDots.fill();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawDots: end');
+    }
+    /**
+     * .
+     */
+    drawPuzzle() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'drawPuzzle: start');
+        // .
+        if (!this.context) {
+            return;
+        }
+        // .
+        this.setCanvasBackgroundColor(this.canvasWidth, this.canvasHeight);
+        // .
+        this.context.textAlign = 'center';
+        this.context.textBaseline = 'middle';
+        this.context.font = ((this.square / 2) + 'px ' + this.fontFamilyText);
+        this.context.fillStyle = this.fillStyleText;
+        for (let row = 0; row < this.BOARD_ROWS; row++) {
+            // .
+            this.points[row] = new Array();
+            // .
+            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
+                // .
+                this.points[row][column] = new _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"]();
+                // .
+                this.context.fillText(this.puzzle[row][column], this.margin + (this.square / 2) + (this.square * column), this.margin + (this.square / 2) + (this.square * row));
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'drawPuzzle: end');
+    }
+    /**
+     * .
+     *
+     * @param clickX
+     * @param clickY
+     */
+    onClick(clickX, clickY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: clickX: ' + clickX);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: clickY: ' + clickY);
+        // .
+        const detectX = this.onClickX(clickX);
+        const detectY = this.onClickY(clickY);
+        if ((detectX.line < 0) && (detectY.line < 0)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'onClick: No valid clicks detected.');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: end');
+            return;
+        }
+        if ((detectX.line >= 0) && (detectY.line >= 0)) {
+            if (detectX.range < detectY.range) {
+                detectY.line = -1;
+            }
+            else {
+                detectX.line = -1;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: x: line: ' + detectX.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: y: line: ' + detectY.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: x: index: ' + detectX.index);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: y: index: ' + detectY.index);
+        if (detectX.line >= 0) {
+            // Out of range click detected.
+            if (detectY.rangeOut) {
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: end');
+                return;
+            }
+            // .
+            const state = this.onRightLeftClick(detectY.index, detectX.line);
+            // .
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === state) {
+                this.drawVerticalLine(detectX.lineStart, detectY.indexStart);
+            }
+            else if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_CROSS === state) {
+                this.drawVerticalCross(detectX.lineStart, detectY.indexStart);
+            }
+            else {
+                this.clearVerticalCross(detectX.lineStart, detectY.indexStart);
+            }
+        }
+        else {
+            // Out of range click detected.
+            if (detectX.rangeOut) {
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'onClick: Out of range click detected.');
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: end');
+                return;
+            }
+            // .
+            const state = this.onTopBottomClick(detectY.line, detectX.index);
+            // .
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === state) {
+                this.drawHorizontalLine(detectX.indexStart, detectY.lineStart);
+            }
+            else if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_CROSS === state) {
+                this.drawHorizontalCross(detectX.indexStart, detectY.lineStart);
+            }
+            else {
+                this.clearHorizontalCross(detectX.indexStart, detectY.lineStart);
+            }
+        }
+        // .
+        const verify = this.verify();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'onClick: end');
+    }
+    /**
+     * .
+     *
+     * @param clickX
+     */
+    onClickX(clickX) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onClickX: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onClickX: end');
+        return this.detectClick(clickX, this.BOARD_COLUMNS);
+    }
+    /**
+     * .
+     *
+     * @param clickY
+     */
+    onClickY(clickY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onClickY: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onClickY: end');
+        return this.detectClick(clickY, this.BOARD_ROWS);
+    }
+    /**
+     * .
+     *
+     * @param click
+     * @param length
+     */
+    detectClick(click, length) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: start');
+        const detect = {
+            index: null,
+            indexStart: null,
+            line: -1,
+            lineStart: null,
+            range: null,
+            rangeOut: false
+        };
+        for (let i = 0; i < (length + 1); i++) {
+            detect.range = Math.abs(click - ((i * this.square) + this.margin));
+            if (detect.range <= this.clickRange) {
+                detect.line = i;
+                break;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: line: ' + detect.line);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: range: ' + detect.range);
+        detect.index = Math.floor((click - this.margin) / this.square);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: index: ' + detect.index);
+        detect.indexStart = ((detect.index * this.square) + this.margin);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: indexStart: ' + detect.indexStart);
+        if (detect.indexStart < this.margin) {
+            detect.rangeOut = true;
+        }
+        else if (detect.indexStart >= ((this.square * length) + this.margin)) {
+            detect.rangeOut = true;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: rangeOut: ' + detect.rangeOut);
+        detect.lineStart = ((detect.line * this.square) + this.margin);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: lineStart: ' + detect.lineStart);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'detectClick: end');
+        return detect;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     */
+    onTopBottomClick(row, column) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onTopBottomClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onTopBottomClick: row: ' + row);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onTopBottomClick: column: ' + column);
+        let state = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_NONE;
+        if (this.BOARD_ROWS > row) {
+            state = this.points[row][column].onTopClick();
+        }
+        if (0 < row) {
+            state = this.points[(row - 1)][column].onBottomClick();
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onTopBottomClick: state: ' + state);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onTopBottomClick: end');
+        return state;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     */
+    onRightLeftClick(row, column) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onRightLeftClick: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onRightLeftClick: row: ' + row);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onRightLeftClick: column: ' + column);
+        let state = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_NONE;
+        if (0 < column) {
+            state = this.points[row][(column - 1)].onRightClick();
+        }
+        if (this.BOARD_COLUMNS > column) {
+            state = this.points[row][column].onLeftClick();
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onRightLeftClick: state: ' + state);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'onRightLeftClick: end');
+        return state;
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    drawVerticalLine(x, y) {
+        this.drawLine(x, y, x, (y + this.square));
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    drawHorizontalLine(x, y) {
+        this.drawLine(x, y, (x + this.square), y);
+    }
+    /**
+     * .
+     *
+     * @param startX
+     * @param startY
+     * @param endX
+     * @param endY
+     */
+    drawLine(startX, startY, endX, endY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawLine: start');
+        this.context.lineCap = this.lineCap;
+        this.context.lineWidth = this.lineWidth;
+        this.context.strokeStyle = this.strokeStyleLine;
+        this.context.beginPath();
+        this.context.moveTo(startX, startY);
+        this.context.lineTo(endX, endY);
+        this.context.closePath();
+        this.context.stroke();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawLine: end');
+    }
+    /**
+     * .
+     *
+     * @param startX
+     * @param startY
+     * @param endX
+     * @param endY
+     */
+    clearLine(startX, startY, endX, endY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'clearLine: start');
+        this.context.lineCap = this.lineCap;
+        this.context.lineWidth = (this.lineWidth * 1.5);
+        this.context.strokeStyle = this.strokeStyleClear;
+        this.context.beginPath();
+        this.context.moveTo(startX, startY);
+        this.context.lineTo(endX, endY);
+        this.context.closePath();
+        this.context.stroke();
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'clearLine: end');
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    drawVerticalCross(x, y) {
+        this.drawCross(x, y, x, (y + this.square));
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    drawHorizontalCross(x, y) {
+        this.drawCross(x, y, (x + this.square), y);
+    }
+    /**
+     * .
+     *
+     * @param startX
+     * @param startY
+     * @param endX
+     * @param endY
+     */
+    drawCross(startX, startY, endX, endY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawCross: start');
+        // .
+        this.clearLine(startX, startY, endX, endY);
+        // .
+        this.context.fillStyle = this.fillStyleCross;
+        this.context.font = (this.fontSizeCross + 'px ' + this.fontFamilyCross);
+        this.context.fillText('×', ((startX + endX) / 2), ((startY + endY) / 2));
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'drawCross: end');
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    clearVerticalCross(x, y) {
+        this.clearCross(x, y, x, (y + this.square));
+    }
+    /**
+     * .
+     *
+     * @param x
+     * @param y
+     */
+    clearHorizontalCross(x, y) {
+        this.clearCross(x, y, (x + this.square), y);
+    }
+    /**
+     * .
+     *
+     * @param startX
+     * @param startY
+     * @param endX
+     * @param endY
+     */
+    clearCross(startX, startY, endX, endY) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'clearCross: start');
+        this.context.fillStyle = this.fillStyleClear;
+        this.context.font = (this.fontSizeCrossClear + 'px ' + this.fontFamilyCross);
+        this.context.fillText('■', ((startX + endX) / 2), ((startY + endY) / 2));
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'clearCross: end');
+    }
+    /**
+     * .
+     */
+    verify() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: start');
+        for (let row = 0; row < this.BOARD_ROWS; row++) {
+            for (let column = 0; column < this.BOARD_COLUMNS; column++) {
+                // .
+                const point = this.points[row][column];
+                // .
+                const lines = point.getLines();
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: lines: ' + lines);
+                if (4 === lines) {
+                    _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verify: Impossible line count.');
+                    _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: end: false');
+                    return false;
+                }
+                // .
+                const no = this.puzzle[row][column];
+                _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: [' + row + '][' + column + ']: no: ' + no);
+                if ('' !== no) {
+                    if (Number(no) !== lines) {
+                        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verify: Line count mismatch.');
+                        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: end: false');
+                        return false;
+                    }
+                }
+                // .
+                if (!this.verifyLink(row, column, point)) {
+                    _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: end: false');
+                    return false;
+                }
+                // .
+                this.verifyLoop();
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verify: end: true');
+        return true;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     * @param point
+     */
+    verifyLink(row, column, point) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: start');
+        if (!this.verifyTopLink(row, column, point)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: end: false');
+            return false;
+        }
+        if (!this.verifyBottomLink(row, column, point)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: end: false');
+            return false;
+        }
+        if (!this.verifyRightLink(row, column, point)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: end: false');
+            return false;
+        }
+        if (!this.verifyLeftLink(row, column, point)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: end: false');
+            return false;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLink: end: true');
+        return true;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     * @param point
+     */
+    verifyTopLink(row, column, point) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: start');
+        point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getTop()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: end: true');
+            return true;
+        }
+        let linkRight = 0;
+        let linkLeft = 0;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getRight()) {
+            linkRight++;
+            point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getLeft()) {
+            linkLeft++;
+            point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if ((this.BOARD_COLUMNS - 1) > column) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getTop()) {
+                linkRight++;
+                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+            }
+        }
+        if (0 < column) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getTop()) {
+                linkLeft++;
+                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+            }
+        }
+        if (0 < row) {
+            const pointTop = this.points[(row - 1)][column];
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointTop.getRight()) {
+                linkRight++;
+                point.links.top.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+            }
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointTop.getLeft()) {
+                linkLeft++;
+                point.links.top.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: linkRight: ' + linkRight);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: linkLeft: ' + linkLeft);
+        if ((1 !== linkRight) || (1 !== linkLeft)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verifyTopLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: end: false');
+            return false;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyTopLink: end: true');
+        return true;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     * @param point
+     */
+    verifyBottomLink(row, column, point) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: start');
+        point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getBottom()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
+            return true;
+        }
+        let linkRight = 0;
+        let linkLeft = 0;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getRight()) {
+            linkRight++;
+            point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getLeft()) {
+            linkLeft++;
+            point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if ((this.BOARD_COLUMNS - 1) > column) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column + 1)].getBottom()) {
+                linkRight++;
+                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+            }
+        }
+        if (0 < column) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[row][(column - 1)].getBottom()) {
+                linkLeft++;
+                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+            }
+        }
+        if ((this.BOARD_ROWS - 1) > row) {
+            const pointBottom = this.points[(row + 1)][column];
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointBottom.getRight()) {
+                linkRight++;
+                point.links.bottom.right = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+            }
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointBottom.getLeft()) {
+                linkLeft++;
+                point.links.bottom.left = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: linkRight: ' + linkRight);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: linkLeft: ' + linkLeft);
+        if ((1 !== linkRight) || (1 !== linkLeft)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verifyBottomLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: end: false');
+            return false;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyBottomLink: end: true');
+        return true;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     * @param point
+     */
+    verifyRightLink(row, column, point) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: start');
+        point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getRight()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: end: true');
+            return true;
+        }
+        let linkTop = 0;
+        let linkBottom = 0;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getTop()) {
+            linkTop++;
+            point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getBottom()) {
+            linkBottom++;
+            point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (0 < row) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getRight()) {
+                linkTop++;
+                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+            }
+        }
+        if ((this.BOARD_ROWS - 1) > row) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getRight()) {
+                linkBottom++;
+                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+            }
+        }
+        if ((this.BOARD_COLUMNS - 1) > column) {
+            const pointRight = this.points[row][(column + 1)];
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointRight.getTop()) {
+                linkTop++;
+                point.links.right.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+            }
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointRight.getBottom()) {
+                linkBottom++;
+                point.links.right.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_RIGHT;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: linkTop: ' + linkTop);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: linkBottom: ' + linkBottom);
+        if ((1 !== linkTop) || (1 !== linkBottom)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verifyRightLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: end: false');
+            return false;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyRightLink: end: true');
+        return true;
+    }
+    /**
+     * .
+     *
+     * @param row
+     * @param column
+     * @param point
+     */
+    verifyLeftLink(row, column, point) {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: start');
+        point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_NONE;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE !== point.getLeft()) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
+            return true;
+        }
+        let linkTop = 0;
+        let linkBottom = 0;
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getTop()) {
+            linkTop++;
+            point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === point.getBottom()) {
+            linkBottom++;
+            point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_THIS;
+        }
+        if (0 < row) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row - 1)][column].getLeft()) {
+                linkTop++;
+                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_TOP;
+            }
+        }
+        if ((this.BOARD_ROWS - 1) > row) {
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === this.points[(row + 1)][column].getLeft()) {
+                linkBottom++;
+                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_BOTTOM;
+            }
+        }
+        if (0 < column) {
+            const pointLeft = this.points[row][(column - 1)];
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointLeft.getTop()) {
+                linkTop++;
+                point.links.left.top = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+            }
+            if (_board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].STATE_LINE === pointLeft.getBottom()) {
+                linkBottom++;
+                point.links.left.bottom = _board_point__WEBPACK_IMPORTED_MODULE_3__["BoardPoint"].LINK_LEFT;
+            }
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: linkTop: ' + linkTop);
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: linkBottom: ' + linkBottom);
+        if ((1 !== linkTop) || (1 !== linkBottom)) {
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].i(this.TAG, 'verifyLeftLink: Illegal links.');
+            _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: end: false');
+            return false;
+        }
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].v(this.TAG, 'verifyLeftLink: end: true');
+        return true;
+    }
+    verifyLoop() {
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verifyLoop: start');
+        _util_log__WEBPACK_IMPORTED_MODULE_5__["Log"].d(this.TAG, 'verifyLoop: end');
+    }
+};
+StageComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('board', { static: false })
+], StageComponent.prototype, "board", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('dots', { static: false })
+], StageComponent.prototype, "dots", void 0);
+StageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-stage',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./stage.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/stage/stage.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./stage.component.css */ "./src/app/stage/stage.component.css")).default]
+    })
+], StageComponent);
+
 
 
 /***/ }),
