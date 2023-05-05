@@ -55,7 +55,7 @@ ul {
 }
 
 .google-budge{
- height: 59px; /* 高さを自動に調整 */
+ height: 51px; /* 高さを自動に調整 */
  }
 
  /* スマートフォンの画像とキャプションのスタイルを指定 */
@@ -136,7 +136,7 @@ a.policy, a.contact{
   }
 
  .google-budge {
-  height: 53px;
+  height: 42px;
   width:auto;
  }
 
@@ -190,7 +190,7 @@ a.policy, a.contact{
   }
 
  .google-budge {
-  height: 53px;
+  height: 42px;
   width:auto;
  }
 
