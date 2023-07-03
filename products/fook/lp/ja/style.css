@@ -1,0 +1,254 @@
+/* 全体のフォントファミリーを指定し、marginとpaddingを0に設定 */
+html{
+   background-color: #333; /* 背景色を黒に設定 */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダーのスタイルを指定 */
+header {
+  background-color: #333; /* 背景色を黒に設定 */
+  color: white; /* テキスト色を白に設定 */
+  display: flex; /* Flexboxを使用 */
+  justify-content: space-between; /* 要素間にスペースを設け、左右にそれぞれ寄せる */
+  align-items: center; /* 要素を中央に揃える */
+  padding: 1rem; /* 上下左右に1remの余白を設定 */
+}
+
+/* main要素のmarginを設定 */
+main {
+  padding: 0 15px 0 0; /* 上下0、左15px、右0の余白を設定 */
+  background:white
+}
+
+/* h2要素のフォントサイズを設定 */
+h2 {
+  font-size: 1.5rem; /* フォントサイズを1.5remに設定 */
+}
+
+/* section要素の余白を設定 */
+section {
+  margin: 4rem 0; /* 上下に4remの余白を設定 */
+}
+
+/* リストのスタイルをリセットし、余白を0に設定 */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ダウンロードボタンを横に並べるためのFlexboxの設定 */
+.download-buttons {
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* 垂直方向に中央揃え */
+}
+
+/* ダウンロードボタンのアイコンのスタイルを指定 */
+.download-buttons img {
+  width: auto; /* 幅を150pxに指定 */
+  margin-right: 20px; /* 右側の余白を20pxに設定 */
+}
+
+.google-budge{
+ height: 51px; /* 高さを自動に調整 */
+ }
+
+ /* スマートフォンの画像とキャプションのスタイルを指定 */
+ #smartphone {
+   text-align: center; /* スマートフォン画像とキャプションを中央揃えにする */
+ }
+
+  .smartphone-container {
+    display: flex; /* Flexboxを使用 */
+    flex-direction: column; /* 要素を縦に並べるように設定 */
+    align-items: center; /* 要素を中央に揃える */
+  }
+
+  .phone-image {
+    width: 80%; /* 幅を80%に設定 */
+    max-width: 300px; /* 最大幅を300pxに設定 */
+  }
+
+  .smartphone-msg {
+    font-size: 1.5rem; /* フォントサイズを1.5remに設定 */
+  }
+
+  .appIcon-image{
+   width: 128px;
+   height: 128px;
+  }
+
+
+ /* Flexboxを使用し、要素を横に並べ、右寄せにする */
+ .container {
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+.text-container {
+  width: 50%;
+ }
+
+ footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px; /* heightからmin-heightに変更 */
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-top: 1px solid #ccc;
+ }
+
+ footer span {
+  font-size: 14px;
+  color: #666;
+ }
+
+.policy-and-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.policy, .contact {
+    margin: 0 10px;
+ }
+
+a.policy, a.contact{
+  color: white;
+}
+
+/*mobile 縦*/
+@media screen and (max-width: 767px) {
+
+ main{
+  padding: 0 0 0 4px; /* 上下0、左15px、右0の余白を設定 */
+  }
+
+ .google-budge {
+  height: 42px;
+  width:auto;
+ }
+
+  .smartphone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .phone-image {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .smartphone-msg {
+    font-size: 1.5rem;
+  }
+
+  header{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container{
+   flex-direction: column;
+  }
+
+  .download-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .policy-and-contact {
+   display: flex; /* flexbox を使用 */
+   flex-direction: column; /* flexbox で縦方向に並べる */
+   align-items: center; /* 横方向に中央寄せ */
+ }
+
+ .policy,
+ .contact {
+   margin: 10px 0; /* 上下に 10px マージンを設定 */
+ }
+}
+
+/*mobile 横*/
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+
+ main{
+  padding: 0 0 0 4px; /* 上下0、左15px、右0の余白を設定 */
+  }
+
+ .google-budge {
+  height: 42px;
+  width:auto;
+ }
+
+  .smartphone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem; /* 一つ目の要素と二つ目の要素の間隔を狭める */
+  }
+
+ .text-container {
+   margin-top: 1rem; /* 例えば1remに設定 */
+ }
+
+  .phone-image {
+    width: 80%;
+    max-width: 300px;
+ }
+
+  .smartphone-msg {
+    font-size: 1.5rem;
+  }
+
+   header{
+     flex-direction: column;
+     align-items: center;
+   }
+
+ .container{
+  flex-direction: column;
+ }
+
+ .download-buttons {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .policy-and-contact {
+   display: flex; /* flexbox を使用 */
+   flex-direction: column; /* flexbox で縦方向に並べる */
+   align-items: center; /* 横方向に中央寄せ */
+ }
+
+ .policy,
+ .contact {
+   margin: 10px 0; /* 上下に 10px マージンを設定 */
+ }
+}
+
+/*tablet 縦*/
+/*
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  }
+*/
+
+/*tablet 横*/
+/*
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+ }
+*/
