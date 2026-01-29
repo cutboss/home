@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavencer - Pro WAV Silence Editor</title>
+    <meta name="description"
+        content="Precision WAV silence adjustment tool. Trim or pad silence at the start and end of your audio files.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+    <div class="glass-container">
+        <header>
+            <h1 class="logo">Wavencer</h1>
+            <p class="subtitle">Precision Silence Adjuster</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drop WAV files here or <span class="browse">browse</span></p>
+                    <input type="file" id="file-input" accept="audio/wav" multiple hidden>
+                </div>
+            </div>
+
+            <div id="file-list-container" class="file-list-container hidden">
+                <p id="file-summary"></p>
+                <ul id="file-list" class="file-list"></ul>
+            </div>
+
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="start-silence">Start Silence (ms)</label>
+                    <input type="number" id="start-silence" value="300" min="0" step="10">
+                </div>
+                <div class="setting-item">
+                    <label for="end-silence">End Silence (ms)</label>
+                    <input type="number" id="end-silence" value="1000" min="0" step="10">
+                </div>
+                <div class="setting-item checkbox-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="ignore-noise" checked>
+                        <span class="checkmark"></span>
+                        Ignore background noise
+                    </label>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="process-btn" class="primary-btn" disabled>Process Files</button>
+                <div id="progress-container" class="progress-container hidden">
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <p id="progress-text">Processing: 0 / 0</p>
+                </div>
+                <a id="download-link" class="secondary-btn hidden">Download Result</a>
+            </div>
+
+            <div id="status-msg" class="status-msg"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Wavencer</p>
+        </footer>
+    </div>
+
+    <script src="wav-helper.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
