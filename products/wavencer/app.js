@@ -21,9 +21,13 @@ const progressContainer = document.getElementById('progress-container');
 const progressBarFill = document.getElementById('progress-bar-fill');
 const progressText = document.getElementById('progress-text');
 
+const STORAGE_KEY = 'wavencer_settings';
+
 // Initialization
 function init() {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    loadSettings();
 
     dropZone.addEventListener('click', () => fileInput.click());
     dropZone.addEventListener('dragover', (e) => {
@@ -35,6 +39,34 @@ function init() {
 
     fileInput.addEventListener('change', handleFileSelect);
     processBtn.addEventListener('click', processFiles);
+
+    // Persistence listeners
+    startSilenceInput.addEventListener('input', saveSettings);
+    endSilenceInput.addEventListener('input', saveSettings);
+    ignoreNoiseCheckbox.addEventListener('change', saveSettings);
+}
+
+function loadSettings() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+        try {
+            const settings = JSON.parse(saved);
+            if (settings.startSilence !== undefined) startSilenceInput.value = settings.startSilence;
+            if (settings.endSilence !== undefined) endSilenceInput.value = settings.endSilence;
+            if (settings.ignoreNoise !== undefined) ignoreNoiseCheckbox.checked = settings.ignoreNoise;
+        } catch (e) {
+            console.error('Error loading settings', e);
+        }
+    }
+}
+
+function saveSettings() {
+    const settings = {
+        startSilence: startSilenceInput.value,
+        endSilence: endSilenceInput.value,
+        ignoreNoise: ignoreNoiseCheckbox.checked
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
 }
 
 function handleDrop(e) {
