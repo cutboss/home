@@ -191,7 +191,11 @@ async function processFiles() {
 
     if (zip) {
         finalBlob = await zip.generateAsync({ type: 'blob' });
-        finalFileName = 'my_wavs.zip';
+
+        // New naming convention: Wavencer-YYYYMMDDTHHmmssZ-Count.zip
+        const now = new Date();
+        const timestamp = now.toISOString().replace(/[:\-]/g, '').split('.')[0] + 'Z';
+        finalFileName = `Wavencer-${timestamp}-${selectedFiles.length}.zip`;
     } else {
         finalBlob = singleBlob;
         finalFileName = singleFileName;
@@ -200,12 +204,14 @@ async function processFiles() {
     const url = URL.createObjectURL(finalBlob);
     downloadLink.href = url;
     downloadLink.download = finalFileName;
-    downloadLink.classList.remove('hidden');
-    downloadLink.textContent = zip ? 'Download ZIP Package' : 'Download WAV File';
+    // downloadLink.classList.remove('hidden'); // Keep it hidden now that it's automatic
 
     updateStatus('Processing complete!');
     progressContainer.classList.add('hidden');
     processBtn.disabled = false;
+
+    // Automatically trigger download
+    downloadLink.click();
 }
 
 function updateStatus(msg, isError = false) {

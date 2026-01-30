@@ -321,3 +321,13 @@ footer {
     font-size: 0.75rem;
     opacity: 0.5;
 }
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary);
+}
