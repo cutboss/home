@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master WAV - Premium Audio Mastering</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🎚️</span>
+                <h1>Master WAV</h1>
+            </div>
+            <p class="subtitle">High-fidelity Browser-based Audio Mastering</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div id="drop-zone" class="drop-zone">
+                    <div class="drop-content">
+                        <span class="upload-icon">📁</span>
+                        <p>Drag & Drop WAV files here, or click to select</p>
+                        <input type="file" id="file-input" multiple accept=".wav" hidden>
+                    </div>
+                </div>
+            </section>
+
+            <section class="files-section">
+                <div class="files-header">
+                    <h2>Loaded Files <span id="file-count">(0)</span></h2>
+                    <button id="clear-btn" class="secondary-btn">Clear All</button>
+                </div>
+                <div id="file-list" class="file-list">
+                    <!-- File items will be injected here -->
+                    <div class="empty-state">No files loaded yet.</div>
+                </div>
+            </section>
+
+            <section class="controls-section">
+                <h2>Mastering Preset</h2>
+                <div class="preset-grid">
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="rock" checked>
+                        <div class="preset-info">
+                            <span class="preset-icon">🎸</span>
+                            <span class="preset-name">Rock / Punk</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="pops">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎤</span>
+                            <span class="preset-name">Pops</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="electronic">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎹</span>
+                            <span class="preset-name">Electronic</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="acoustic">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎻</span>
+                            <span class="preset-name">Acoustic / Folk</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="classical">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎺</span>
+                            <span class="preset-name">Classical / Orchestra</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="cinema">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎬</span>
+                            <span class="preset-name">Game / Cinema</span>
+                        </div>
+                    </label>
+                    <label class="preset-card">
+                        <input type="radio" name="preset" value="jazz">
+                        <div class="preset-info">
+                            <span class="preset-icon">🎷</span>
+                            <span class="preset-name">Jazz</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="action-bar">
+                    <button id="process-btn" class="primary-btn" disabled>Download</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="progress-overlay" class="overlay hidden">
+            <div class="modal">
+                <h3>Processing Audio...</h3>
+                <div class="progress-info">
+                    <span id="progress-text">File 0 of 0</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="current-file-name" class="current-file">Initializing...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Master WAV - Professional Audio Tools</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
