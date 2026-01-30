@@ -125,16 +125,15 @@ class AudioProcessor {
         const newFiles = Array.from(fileList).filter(file => file.type === 'audio/wav' || file.name.endsWith('.wav'));
 
         newFiles.forEach(file => {
-            if (!this.files.find(f => f.name === file.name && f.size === file.size)) {
-                this.files.push({
-                    file: file,
-                    name: file.name,
-                    id: Math.random().toString(36).substr(2, 9),
-                    url: URL.createObjectURL(file)
-                });
-            }
+            this.files.push({
+                file: file,
+                name: file.name,
+                id: Math.random().toString(36).substr(2, 9),
+                url: URL.createObjectURL(file)
+            });
         });
 
+        this.fileInput.value = ''; // Reset input to allow re-selecting the same file consecutively
         this.updateUI();
         this.updateDownloadButton();
     }
@@ -185,6 +184,7 @@ class AudioProcessor {
             URL.revokeObjectURL(this.files[index].url);
             this.files.splice(index, 1);
             this.sourceNodes.delete(id);
+            this.fileInput.value = ''; // Reset input to allow re-selecting the same file
             this.updateUI();
             this.updateDownloadButton();
         }
@@ -194,6 +194,7 @@ class AudioProcessor {
         this.files.forEach(f => URL.revokeObjectURL(f.url));
         this.files = [];
         this.sourceNodes.clear();
+        this.fileInput.value = ''; // Reset input to allow re-selecting the same file
         this.updateUI();
         this.updateDownloadButton();
     }
@@ -211,9 +212,23 @@ class AudioProcessor {
         this.progressOverlay.classList.remove('hidden');
 
         try {
+            const usedNames = new Map();
+
             for (let i = 0; i < this.files.length; i++) {
                 const fileObj = this.files[i];
                 this.updateProgress(i, this.files.length, fileObj.name);
+
+                let targetName = fileObj.name;
+                const baseName = targetName.replace(/\.wav$/i, '');
+                const extension = '.wav';
+
+                if (usedNames.has(targetName)) {
+                    const count = usedNames.get(targetName);
+                    targetName = `${baseName} (${count})${extension}`;
+                    usedNames.set(fileObj.name, count + 1);
+                } else {
+                    usedNames.set(targetName, 1);
+                }
 
                 const arrayBuffer = await fileObj.file.arrayBuffer();
                 const audioBuffer = await this.audioCtx.decodeAudioData(arrayBuffer);
@@ -223,9 +238,9 @@ class AudioProcessor {
                 const wavBlob = this.encodeWAV(masteredBuffer);
 
                 if (this.files.length === 1) {
-                    this.downloadFile(wavBlob, fileObj.name);
+                    this.downloadFile(wavBlob, targetName);
                 } else {
-                    zip.file(fileObj.name, wavBlob);
+                    zip.file(targetName, wavBlob);
                 }
             }
 
