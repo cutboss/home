@@ -245,9 +245,10 @@ class AudioProcessor {
             }
 
             if (this.files.length > 1) {
-                const timestamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 12);
+                const timestamp = new Date().toISOString().replace(/[:\-]/g, '').replace(/\.\d+/, '');
+                const zipFileName = `MasterWAV-${timestamp}-${this.files.length}.zip`;
                 const content = await zip.generateAsync({ type: "blob" });
-                this.downloadFile(content, `wavs-${timestamp}.zip`);
+                this.downloadFile(content, zipFileName);
             }
 
         } catch (error) {
