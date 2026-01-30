@@ -319,6 +319,19 @@ footer {
     font-size: 0.8rem;
 }
 
+footer a {
+    color: #818cf8;
+    /* Light indigo */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .preset-grid {
         grid-template-columns: repeat(2, 1fr);
