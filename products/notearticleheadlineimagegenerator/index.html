@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>note Article Headline Image Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c0d12;
+            --accent-color: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --glass-bg: rgba(30, 41, 59, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.82);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+        }
+
+        #app {
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        header h1 span {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .status-bar {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            min-width: 250px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .container {
+            display: grid;
+            gap: 24px;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            padding: 32px;
+        }
+
+        .drop-zone {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed var(--glass-border);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .drop-zone:hover:not(.disabled),
+        .drop-zone.drag-over {
+            border-color: var(--accent-color);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .drop-zone.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            filter: grayscale(1);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .input-group input,
+        .input-group select {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        button {
+            flex: 1;
+            padding: 18px;
+            border-radius: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+        }
+
+        .primary-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .secondary-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+        .preview-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .preview-card h3 {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .canvas-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .canvas-wrapper canvas,
+        .canvas-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .loader {
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s infinite linear;
+            margin-left: 12px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+    </style>
+
+    <!-- External AI Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>note <span>Article Headline</span></h1>
+            <p>Image Generator</p>
+            <div id="status-display" class="status-bar">システム起動中...</div>
+        </header>
+
+        <main class="container">
+            <section class="glass">
+                <label class="drop-zone disabled" id="drop-zone" for="file-input">
+                    <div style="text-align: center;">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                        </svg>
+                        <p style="font-weight: 700; margin-top: 14px; font-size: 1.1rem;">画像をドロップまたはクリック</p>
+                        <p style="font-weight: 400; font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+                            PNG, JPG, BMP に対応</p>
+                    </div>
+                    <input type="file" id="file-input" accept="image/jpeg,image/png,image/bmp" style="display: none;"
+                        disabled>
+                </label>
+
+                <div class="control-grid">
+                    <div class="input-group">
+                        <label>幅 (px)</label>
+                        <input type="number" id="w-input" value="1280">
+                    </div>
+                    <div class="input-group">
+                        <label>高さ (px)</label>
+                        <input type="number" id="h-input" value="670">
+                    </div>
+                    <div class="input-group">
+                        <label>フォーマット</label>
+                        <select id="fmt-input">
+                            <option value="image/png">PNG</option>
+                            <option value="image/jpeg">JPG</option>
+                            <option value="image/bmp">BMP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="run-btn" class="primary-btn" disabled>
+                        <span>実行する</span>
+                        <div id="loading-spinner" class="loader" hidden></div>
+                    </button>
+                    <button id="dl-btn" class="secondary-btn" disabled>ダウンロード</button>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <div class="preview-card glass">
+                    <h3>元の画像</h3>
+                    <div id="src-box" class="canvas-wrapper">
+                        <span style="opacity: 0.3; font-style: italic; font-size: 0.9rem;">未選択</span>
+                    </div>
+                </div>
+                <div class="preview-card glass">
+                    <h3>トリミング後</h3>
+                    <div id="res-box" class="canvas-wrapper">
+                        <span style="opacity: 0.3; font-style: italic; font-size: 0.9rem;">実行待ち</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 note Article Headline Image Generator - All Local AI Processing</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const status = document.getElementById('status-display');
+            const log = (msg, error = false) => {
+                if (!status) return;
+                status.innerText = msg;
+                status.style.color = error ? '#ff4d4d' : '#f8fafc';
+                status.style.background = error ? 'rgba(255, 77, 77, 0.2)' : 'rgba(99, 102, 241, 0.1)';
+            };
+
+            window.onerror = (m, s, l) => log('エラー: ' + m, true);
+
+            const state = { model: null, srcImg: null, resCanvas: null };
+            const els = {
+                dz: document.getElementById('drop-zone'),
+                file: document.getElementById('file-input'),
+                w: document.getElementById('w-input'),
+                h: document.getElementById('h-input'),
+                fmt: document.getElementById('fmt-input'),
+                run: document.getElementById('run-btn'),
+                dl: document.getElementById('dl-btn'),
+                srcBox: document.getElementById('src-box'),
+                resBox: document.getElementById('res-box'),
+                spin: document.getElementById('loading-spinner')
+            };
+
+            const save = () => {
+                localStorage.setItem('note-gen-settings-v3', JSON.stringify({
+                    w: els.w.value, h: els.h.value, f: els.fmt.value
+                }));
+            };
+
+            const load = () => {
+                const saved = localStorage.getItem('note-gen-settings-v3');
+                if (saved) {
+                    try {
+                        const s = JSON.parse(saved);
+                        els.w.value = s.w || 1280;
+                        els.h.value = s.h || 670;
+                        els.fmt.value = s.f || 'image/png';
+                    } catch (e) { }
+                }
+            };
+
+            const handleFile = (f) => {
+                if (!f || !f.type.startsWith('image/')) return log('エラー: 画像ファイルを選択してください', true);
+                log('画像を読み込んでいます...');
+                const r = new FileReader();
+                r.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        state.srcImg = img;
+                        log('画像読み込み完了。数値を設定して「実行する」を押してください');
+                        els.srcBox.innerHTML = '';
+                        const cvs = document.createElement('canvas');
+                        const ctx = cvs.getContext('2d');
+                        const sc = Math.min(els.srcBox.clientWidth / img.width, els.srcBox.clientHeight / img.height, 1);
+                        cvs.width = img.width * sc; cvs.height = img.height * sc;
+                        ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
+                        els.srcBox.appendChild(cvs);
+                        els.run.disabled = false;
+                        els.dl.disabled = true;
+                    };
+                    img.src = e.target.result;
+                };
+                r.readAsDataURL(f);
+            };
+
+            const process = async () => {
+                if (!state.srcImg || !state.model) return;
+                els.run.disabled = true; els.spin.hidden = false;
+                log('AIで被写体を検出中...');
+
+                try {
+                    const tw = parseInt(els.w.value), th = parseInt(els.h.value);
+                    const preds = await state.model.detect(state.srcImg);
+                    log('構図を最適化中...');
+
+                    const iw = state.srcImg.width, ih = state.srcImg.height;
+                    let fx = iw / 2, fy = ih / 2;
+
+                    if (preds.length > 0) {
+                        const persons = preds.filter(p => p.class === 'person');
+                        let subjects = persons.length ? persons : preds;
+
+                        // Multi-person logic: Check if we should focus on everyone or just one
+                        if (persons.length > 1) {
+                            // Sort by size
+                            const sorted = [...persons].sort((a, b) => (b.bbox[2] * b.bbox[3]) - (a.bbox[2] * a.bbox[3]));
+                            const largest = sorted[0];
+
+                            // Calculate Group Box
+                            let gx1 = iw, gy1 = ih, gx2 = 0, gy2 = 0;
+                            let totalArea = 0;
+                            persons.forEach(p => {
+                                gx1 = Math.min(gx1, p.bbox[0]); gy1 = Math.min(gy1, p.bbox[1]);
+                                gx2 = Math.max(gx2, p.bbox[0] + p.bbox[2]); gy2 = Math.max(gy2, p.bbox[1] + p.bbox[3]);
+                                totalArea += (p.bbox[2] * p.bbox[3]);
+                            });
+
+                            const groupBoxArea = (gx2 - gx1) * (gy2 - gy1);
+                            const density = totalArea / groupBoxArea;
+                            const spreadX = (gx2 - gx1) / iw;
+
+                            // Threshold: If people occupy less than 20% of their bounding box, 
+                            // or if they are spread across > 90% of the image, they are too far apart.
+                            if (density < 0.2 || spreadX > 0.9) {
+                                // Too far apart, focus on the largest person
+                                subjects = [largest];
+                            } else {
+                                // Include everyone
+                                subjects = persons;
+                            }
+                        }
+
+                        let x1 = iw, y1 = ih, x2 = 0, y2 = 0;
+                        subjects.forEach(p => {
+                            x1 = Math.min(x1, p.bbox[0]); y1 = Math.min(y1, p.bbox[1]);
+                            x2 = Math.max(x2, p.bbox[0] + p.bbox[2]); y2 = Math.max(y2, p.bbox[1] + p.bbox[3]);
+                        });
+                        fx = (x1 + x2) / 2;
+                        fy = (y1 + y2) / 2;
+                        // Focus on eye/face level
+                        if (subjects.some(p => p.class === 'person')) fy = y1 + (y2 - y1) * 0.35;
+                    }
+
+                    const tr = tw / th, ir = iw / ih;
+                    let cw, ch;
+                    if (ir > tr) { ch = ih; cw = ih * tr; } else { cw = iw; ch = iw / tr; }
+                    const cx = Math.max(0, Math.min(iw - cw, fx - cw / 2));
+                    const cy = Math.max(0, Math.min(ih - ch, fy - ch / 2));
+
+                    state.resCanvas = document.createElement('canvas');
+                    state.resCanvas.width = tw; state.resCanvas.height = th;
+                    const ctx = state.resCanvas.getContext('2d');
+                    ctx.imageSmoothingQuality = 'high';
+                    ctx.drawImage(state.srcImg, cx, cy, cw, ch, 0, 0, tw, th);
+
+                    els.resBox.innerHTML = '';
+                    const resImg = new Image();
+                    resImg.src = state.resCanvas.toDataURL('image/png');
+                    els.resBox.appendChild(resImg);
+                    els.dl.disabled = false;
+                    log('完了しました！ダウンロードできます');
+                } catch (e) { log('エラー: ' + e.message, true); }
+                finally { els.run.disabled = false; els.spin.hidden = true; }
+            };
+
+            window.onload = async () => {
+                log('AIモデルを読み込み中...');
+                load();
+
+                // Set up events
+                els.file.onchange = (e) => handleFile(e.target.files[0]);
+                els.run.onclick = process;
+                els.dl.onclick = () => {
+                    if (!state.resCanvas) return;
+                    const fmt = els.fmt.value;
+                    const quality = (fmt === 'image/jpeg') ? 0.85 : 1.0;
+                    const a = document.createElement('a');
+                    const ext = fmt.split('/')[1].replace('jpeg', 'jpg');
+                    a.download = `note-article-${Date.now()}.${ext}`;
+                    a.href = state.resCanvas.toDataURL(fmt, quality);
+                    a.click();
+                };
+                [els.w, els.h, els.fmt].forEach(el => el.onchange = save);
+
+                // Enable Drag & Drop effects
+                els.dz.addEventListener('dragover', (e) => { e.preventDefault(); if (!els.dz.classList.contains('disabled')) els.dz.classList.add('drag-over'); });
+                els.dz.addEventListener('dragleave', () => els.dz.classList.remove('drag-over'));
+                els.dz.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    els.dz.classList.remove('drag-over');
+                    if (!els.dz.classList.contains('disabled') && e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+                });
+
+                // Load AI Model
+                try {
+                    if (window.cocoSsd) {
+                        state.model = await window.cocoSsd.load();
+                        log('準備完了');
+                        // Enable interaction
+                        els.dz.classList.remove('disabled');
+                        els.file.disabled = false;
+                    } else { throw new Error('TensorFlow.js の読み込みに失敗しました。ネット接続を確認してください'); }
+                } catch (e) { log('起動エラー: ' + e.message, true); }
+            };
+        })();
+    </script>
+</body>
+
+</html>
