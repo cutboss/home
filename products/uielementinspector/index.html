@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Element Inspector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🔍</span>
+                <h1>UI Element Inspector</h1>
+            </div>
+            <p class="subtitle">Inspect pixel dimensions and spacing of UI elements.</p>
+        </header>
+
+        <main>
+            <section class="controls-panel">
+                <div class="card upload-card">
+                    <h3>Source Image</h3>
+                    <div class="drop-zone" id="drop-zone">
+                        <span class="drop-icon">📁</span>
+                        <p>Drag & drop or <span>browse</span></p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                </div>
+
+                <div class="card processing-card">
+                    <h3>Processing Settings</h3>
+                    <div class="control-group">
+                        <label for="dpr-input">Device Pixel Ratio</label>
+                        <input type="number" id="dpr-input" min="0.1" step="0.1" value="1.0">
+                    </div>
+                    <button id="analyze-btn" class="primary-btn" disabled>Analyze UI Elements</button>
+                </div>
+
+                <div class="card info-card">
+                    <h3>Instructions</h3>
+                    <ul>
+                        <li>Upload a screenshot of a user interface.</li>
+                        <li>Adjust the <strong>Device Pixel Ratio</strong> if needed.</li>
+                        <li>Analyze to see dimensions and relative spacing.</li>
+                        <li>Values are automatically scaled based on the ratio.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="preview-panel">
+                <div class="canvas-wrapper">
+                    <canvas id="image-canvas"></canvas>
+                    <canvas id="overlay-canvas"></canvas>
+                    <div id="loading-overlay" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Processing with OpenCV.js...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 UI Element Inspector | Created with <a href="https://antigravity.google/"
+                    target="_blank">Antigravity AI</a></p>
+        </footer>
+    </div>
+
+    <!-- OpenCV.js -->
+    <script async src="https://docs.opencv.org/4.10.0/opencv.js" type="text/javascript"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
