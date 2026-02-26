@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Clock</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="material-icons sun">light_mode</span>
+        <span class="material-icons moon">dark_mode</span>
+    </button>
+    <div class="container">
+        <div class="analog-clock-container">
+            <canvas id="analogClock" width="400" height="400"></canvas>
+        </div>
+        <div class="digital-clock-container">
+            <div id="digitalDate"></div>
+            <div id="digitalTime">00:00:00</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
