@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip Boss - Audio Highlight Extractor</title>
+    <meta name="description" content="WAVファイルから自動で盛り上がり箇所を抽出するブラウザ完結型ツール">
+    <link rel="stylesheet" href="styles.css">
+    <!-- JSZip for bulk download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Clip Boss</h1>
+            <p>WAVをロードして、最高の瞬間を自動抽出。</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="upload-section">
+                <span class="upload-icon">🎵</span>
+                <p>WAVファイルをここにドラッグ＆ドロップ</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">またはクリックして選択</p>
+
+                <div id="loading" class="loading-spinner"></div>
+                <p id="status-text" style="display: none; margin-top: 1rem;"></p>
+            </div>
+            <input type="file" id="file-input" accept="audio/wav" style="display: none;">
+
+            <section id="results" class="results-section">
+                <div class="results-header">
+                    <div class="title-group">
+                        <h2>抽出されたクリップ</h2>
+                        <span id="current-filename" class="file-badge"></span>
+                    </div>
+                    <button id="download-all" class="btn btn-download-all">
+                        <span>📦</span> すべて保存 (.zip)
+                    </button>
+                </div>
+                <div id="clips-container" class="clips-grid">
+                    <!-- Clips will be injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
