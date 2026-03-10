@@ -16,6 +16,7 @@ const statusMsg = document.getElementById('status-msg');
 const startSilenceInput = document.getElementById('start-silence');
 const endSilenceInput = document.getElementById('end-silence');
 const ignoreNoiseCheckbox = document.getElementById('ignore-noise');
+const fadeOutToggle = document.getElementById('fade-out-toggle');
 
 const progressContainer = document.getElementById('progress-container');
 const progressBarFill = document.getElementById('progress-bar-fill');
@@ -44,6 +45,7 @@ function init() {
     startSilenceInput.addEventListener('input', saveSettings);
     endSilenceInput.addEventListener('input', saveSettings);
     ignoreNoiseCheckbox.addEventListener('change', saveSettings);
+    fadeOutToggle.addEventListener('change', saveSettings);
 }
 
 function loadSettings() {
@@ -54,6 +56,7 @@ function loadSettings() {
             if (settings.startSilence !== undefined) startSilenceInput.value = settings.startSilence;
             if (settings.endSilence !== undefined) endSilenceInput.value = settings.endSilence;
             if (settings.ignoreNoise !== undefined) ignoreNoiseCheckbox.checked = settings.ignoreNoise;
+            if (settings.fadeOut !== undefined) fadeOutToggle.checked = settings.fadeOut;
         } catch (e) {
             console.error('Error loading settings', e);
         }
@@ -64,7 +67,8 @@ function saveSettings() {
     const settings = {
         startSilence: startSilenceInput.value,
         endSilence: endSilenceInput.value,
-        ignoreNoise: ignoreNoiseCheckbox.checked
+        ignoreNoise: ignoreNoiseCheckbox.checked,
+        fadeOut: fadeOutToggle.checked
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
 }
@@ -115,6 +119,7 @@ async function processFiles() {
     const startMs = parseInt(startSilenceInput.value) || 0;
     const endMs = parseInt(endSilenceInput.value) || 0;
     const ignoreNoise = ignoreNoiseCheckbox.checked;
+    const isFadeOutEnabled = fadeOutToggle.checked;
     const linearThreshold = ignoreNoise ? 0.004 : 0.0001;
 
     updateStatus('Processing files...');
@@ -154,11 +159,37 @@ async function processFiles() {
             // 3. Create new AudioBuffer
             const newBuffer = audioContext.createBuffer(numChannels, newTotalLength, sampleRate);
 
-            for (let c = 0; c < numChannels; c++) {
-                const oldData = sourceBuffer.getChannelData(c);
-                const newData = newBuffer.getChannelData(c);
-                for (let j = 0; j < signalLength; j++) {
-                    newData[startSilenceSamples + j] = oldData[bounds.start + j];
+            if (isFadeOutEnabled) {
+                // 3.5 Apply 500ms fade out to the end of the signal
+                const fadeOutMs = 500;
+                const fadeOutSamples = Math.floor((fadeOutMs / 1000) * sampleRate);
+                const fadeOutStart = Math.max(0, signalLength - fadeOutSamples);
+                const actualFadeSamples = signalLength - fadeOutStart;
+
+                for (let c = 0; c < numChannels; c++) {
+                    const oldData = sourceBuffer.getChannelData(c);
+                    const newData = newBuffer.getChannelData(c);
+                    for (let j = 0; j < signalLength; j++) {
+                        let sample = oldData[bounds.start + j];
+                        
+                        // Apply fade out if in the last 500ms
+                        if (j >= fadeOutStart) {
+                            const fadeIndex = j - fadeOutStart;
+                            const gain = 1.0 - (fadeIndex / actualFadeSamples);
+                            sample *= gain;
+                        }
+                        
+                        newData[startSilenceSamples + j] = sample;
+                    }
+                }
+            } else {
+                // Just copy without fade out
+                for (let c = 0; c < numChannels; c++) {
+                    const oldData = sourceBuffer.getChannelData(c);
+                    const newData = newBuffer.getChannelData(c);
+                    for (let j = 0; j < signalLength; j++) {
+                        newData[startSilenceSamples + j] = oldData[bounds.start + j];
+                    }
                 }
             }
 
