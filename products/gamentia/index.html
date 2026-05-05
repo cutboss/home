@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="icon.png" sizes="512x512" type="image/png">
+    <link rel="icon" href="icon.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="icon.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="icon.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="icon.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>GaMeNTia</title>
+    <style>
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #3C4043;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .item {
+            text-align: center;
+            /* margin-bottom: 20px; */
+        }
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+            /* margin-bottom: 10px; */
+        }
+
+.app-icon {
+    max-width: 100%;  
+    height: auto;     
+    max-height: 256px; 
+    /* margin-bottom: 10px; */
+}
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+	.badges img {
+	    height: 56px;     
+	    width: auto;       
+	    object-fit: contain; 
+	}
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .item a {
+            color: #a0cafd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .item a:hover {
+            text-decoration: underline;
+        }
+
+.app-name {
+    font-size: 16px;   
+    color: #e1e2e8;    
+    font-weight: bold; 
+}
+
+.app-subtitle {
+    font-size: 32px;   
+    color: #e1e2e8; 
+    font-weight: bold;
+            margin-bottom: 56px;    
+}
+
+        /* スマホ用 */
+        @media (max-width: 600px) {
+            .item {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img class="app-icon" src="icon.png">
+        </div>
+        <div class="item">
+            <p class="app-name">GaMeNTia</p>
+        </div>
+        <div class="item">
+            <p class="app-subtitle">Dedicated Game Ledger</p>
+        </div>
+        <div class="badges">
+            <!--<div class="item"><a href="https://apps.apple.com/us/app/id6587551910" target="_blank">
+                <img src="../../images/badges/Download_on_the_App_Store_Badge.png"></a>
+            </div>-->
+            <div class="item"><a href="https://play.google.com/store/apps/details?id=cutboss.gamentia&hl=en" target="_blank">
+                <img src="../../images/badges/google-play-badge.png"></a>
+            </div>
+        </div>
+        <div class="links">
+            <div class="item">
+                <a href="./terms/">Terms of Service</a>
+            </div>
+            <div class="item">
+                <a href="./privacy/">Privacy Policy</a>
+            </div>
+            <div class="item">
+                <a href="https://forms.gle/Bfj4RTqEpNAqPn5AA" target="_blank">App Support</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
